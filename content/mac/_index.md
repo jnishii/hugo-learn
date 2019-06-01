@@ -1,10 +1,10 @@
 ---
 title: Mac
-weight: 10
+weight: 2
 chapter: true
 ---
 
-## Macのいろいろ
+# Macのいろいろ
 
 -  もれなく便利なアプリがバンドルされている。iTunes, Photo, Mail, GarageBand，Grapher，その他いろいろ。しかもどれも結構使いやすい。
 -  Cコンパイラgcc等のプログラミング開発環境がもれなく整っている。

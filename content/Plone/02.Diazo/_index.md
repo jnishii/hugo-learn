@@ -1,5 +1,6 @@
 ---
 title: Diazo
+weight: 20
 ---
 
 Diazoの情報が少なくPloneのテーマ作りに困るが，ちょっとづつ情報が増えてきた。

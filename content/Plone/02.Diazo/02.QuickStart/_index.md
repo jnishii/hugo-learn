@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+weight: 20
 ---
 
 注) この文書は[Diazo:Quick Start](http://docs.diazo.org/en/latest/quickstart.html)をgoogle 翻訳にかけた後，フォーマットなどを少し修正したものです。少し訳を修正した部分もありますが，google 翻訳そのままの部分がほとんどです。

@@ -1,5 +1,6 @@
 ---
 title: Plone
+weight: 10
 ---
 
 若干の設定メモやトラブル対策集と，Plone4からPlone5への移行の苦労話

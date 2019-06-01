@@ -1,7 +1,7 @@
 ---
 title: Python
-weight: 11
 chapter: true
+weight: 10
 ---
 
 # Python

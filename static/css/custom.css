@@ -1,4 +1,62 @@
 .logotext {
-	font-size: 500%; 
+	font-size: 160%;
+	font-weight: 400;
+	line-height: 80%;
 	color: white;
 }
+
+#sidebar {
+    font-weight: 400 !important;
+    line-height: 1.5;
+    letter-spacing: -.5px;
+}
+body {
+    font-family: font-family: "Muli", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 17px !important;
+	color: #444;
+  	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; 
+}
+h2, h3, h4, h5, h6 {
+    font-family:  "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    text-rendering: optimizeLegibility;
+    color: #555555;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+h1 {
+    font-family:  "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    text-align: center;
+    text-transform: none;
+	color: #222;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.85rem 0 1.7rem 0;
+  text-rendering: optimizeLegibility;
+ font-weight:600;
+ }
+
+h1 {
+  font-size: 3.10rem;
+  font-weight: 400;
+  }
+
+h2 {
+  font-size: 1.7rem;
+   }
+
+h3 {
+  font-size: 1.3rem; }
+
+h4 {
+  font-size: 1.1rem; }
+
+h5 {
+  font-size: 1.0rem; }
+
+h6 {
+  font-size: 0.9rem; }

@@ -1,11 +1,12 @@
 ---
 title: 自動採点
+chapter: true
 weight: 15
 ---
 
-# プログラム自動採点ライブラリ
+#  自動採点ライブラリ
 
-プログラム課題の自動採点ライブラリのリンク集
+プログラム課題用の自動採点ライブラリのリンク集
 
 - [Swirl](https://swirlstats.com/instructors.html)
 	- rの自習用システム

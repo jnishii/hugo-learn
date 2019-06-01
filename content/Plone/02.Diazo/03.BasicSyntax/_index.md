@@ -1,5 +1,6 @@
 ---
 title: Basic Syntax
+weight: 30
 ---
 
 

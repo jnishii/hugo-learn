@@ -1,6 +1,6 @@
 ---
-title: Porxy設定
-weight: 15
+title: Proxy設定
+weight: 6
 ---
 
 以下は，特記してない限りUNIX系のシステムでのProxy設定の説明です。

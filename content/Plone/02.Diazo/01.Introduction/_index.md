@@ -1,5 +1,6 @@
 ---
 title: はじめに
+weight: 10
 ---
 
 注) この文書は[Diazo: Introduction](http://docs.diazo.org/en/latest/introduction.html)をgoogle 翻訳にかけた後，フォーマットなどを少し修正したものです。少し訳を修正した部分もありますが，google 翻訳そのままの部分がほとんどです。

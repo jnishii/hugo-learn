@@ -1,6 +1,6 @@
 ---
 title: Docker
-weight: 16
+weight: 14
 ---
 
 卒論生が`anaconda + opencv`でプログラムを作ろうと，Linux上で
