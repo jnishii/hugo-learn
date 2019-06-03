@@ -9,7 +9,8 @@ weight: 40
 - [gym/gym/envs/__init__.py](https://github.com/openai/gym/blob/master/gym/envs/__init__.py)
 	- 各環境の設定値(`entry_point`, `max_episode_steps`,  `reward_threshold`)の一覧(registry情報)を見れる
 	- CartPole-v0とCartPole-v1は，`max_episode_steps`と`reward_threshold`の違いであることがわかる。
-
+- [How to create new environments for Gym]( https://github.com/openai/gym/blob/master/docs/creating-environments.md)
+- [Gym準拠の環境(公式,非公式)一覧](https://github.com/openai/gym/blob/master/docs/environments.md)
 
 ## OpenAI Gymインストール
 
@@ -34,6 +35,7 @@ A. ライブラリのインストールやアニメーション表示が問題�
 #### Q. 実行時のエラー: "Error: Tried to reset environment which is not done. While the monitor is active for CartPole-v1, you cannot call reset() unless the episode is over."
 
 A. max_episode_steps の値を調整する。
+
 - 方法1: `env.tags['wrapper_config.TimeLimit.max_episode_steps'] = 500`
 - 方法2: 
 ```
@@ -49,6 +51,7 @@ idの名前を変えれば，仮に違う名前の環境として定義できる
 参考URL: [How to configure the cartpole environment such that it is not capped at 200?](https://github.com/openai/gym/issues/463)
 
 #### Q. FrozenLakeが滑り過ぎで困る。滑らない環境にしたい。
+
 A. 以下のような設定を加える。
 ```
 from gym.envs.registration import register
