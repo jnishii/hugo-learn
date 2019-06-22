@@ -5,7 +5,7 @@ title = "Jun Nishii"
 theme = "hugo-theme-learn"
 themesdir = "themes"
 metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= true
+defaultContentLanguageInSubdir = true
 
 [params]
 #  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
