@@ -37,7 +37,7 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
   margin: 0.85rem 0 1.7rem 0;
   text-rendering: optimizeLegibility;
- font-weight:600;
+  font-weight:600;
  }
 
 h1 {
@@ -61,7 +61,23 @@ h5 {
 h6 {
   font-size: 0.9rem; }
 
-/* short code*/
+/* code fence */
+pre {
+	background: #f6f6f6;  /* margin color of code fence (org: #282c34) */
+	border: 1px solid #ddd;
+	font-size: 1rem;
+}
+
+pre code {
+    font-size: .9rem;
+    white-space: pre;
+}
+
+pre .copy-to-clipboard {
+    background-color: #eee;
+    border-color: #ddd;
+}
+/* short code */
 code {
     background: #f9f2f4;
     color: #9c1d3d;
@@ -75,19 +91,3 @@ code {
     background-color: #f9f2f4;
 }
 
-/* code fence*/
-pre {
-    background: #f6f6f6;  /* margin color of code fence (org: #282c34) */
-    border: 1px solid #ddd;
-     font-size: 1rem;
-}
-
-pre code {
-    font-size: .9rem;
-    white-space: pre;
-}
-
-pre .copy-to-clipboard {
-    background-color: #eee;
-    border-color: #ddd;
-}
