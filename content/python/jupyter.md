@@ -31,7 +31,11 @@ $ jupyter nbextensions_configurator enable
 <!-- $jupyter contrib nbextension install --symlink -->
 
 ## jupyter variants
+- [jupyterlab](https://jupyterlab.readthedocs.io/en/stable/)
+	- [Project jupyter](https://jupyter.org/) による jupyter notebookの後継版
+	- 起動: `$ jupyter lab`
 - [jupyter nteract](https://nteract.io/)
+	- jupyter notebookの機能拡張版
 	- インストール: `$ conda install nteract_on_jupyter`
 	- 起動: `$ jupyter nteract`
 
@@ -107,7 +111,7 @@ current=!pwd
 1. 除きたいセルにタグ(例えば，`remove_cell`)をつける。タグは，View/Cell Toolbar/Tagsで入力可能に。
 2. 以下でシートの変換
 ```
-jupyter nbconvert nbconvert-example.ipynb --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}'
+$ jupyter nbconvert nbconvert-example.ipynb --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}'
 ```
 
 以下のように，入力や出力を消すための各種フィルタがある。
