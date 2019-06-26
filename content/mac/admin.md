@@ -3,7 +3,26 @@ title: ユーザ管理
 weight: 5
 ---
 
-Macにターミナル・コマンドでユーザやグループの追加をする方法
+
+## sambaストレージを自動マウントする
+
+```
+# cat /etc/auto_smb
+/../Volumes/local -fstype=smbfs,soft ://<user>:<password>@<hostname>/<target directory> 
+```
+`/Volumes/`ではなく`/../Volumes/`とすることで，`/Volumes/`の下にマウントポイントになるディレクトリを作っておかなくてもよくなる。
+
+```
+# cat /etc/auto_master
+/-			auto_smb	-nosuid
+```
+automountに設定読み込み
+```
+$ sudo automount -vc
+```
+
+
+## Macにターミナル・コマンドでユーザやグループの追加する
 
 
 ### プライマリグループIDの一覧表示
