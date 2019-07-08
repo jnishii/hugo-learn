@@ -1,0 +1,8 @@
+#!/bin/bash
+hugo -s ${HOME}/Sites/hugo-learn/ \
+	-b /~jun/notebook \
+	-d ${HOME}/mnt/zeus/jun/public_html/notebook \
+	--cleanDestinationDir
+
+#			-b http://bcl.sci.yamaguchi-u.ac.jp/~jun/ \
+#		-b http://ds0n.cc.yamaguchi-u.ac.jp/~nishii/ \
