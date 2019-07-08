@@ -1,5 +1,17 @@
 # メモ by Jun
 
+## hugo-theme-learnのインストール
+```
+$ git submodule add https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn/
+```
+
+## submodule-の削除
+
+```
+git submodule deinit -f themes/hugo-theme-learn
+git rm -f themes/hugo-theme-learn
+```
+
 ## highlight of code fence 
 
 hugoデフォルトのhighlight機能は使わず[highlight.js](https://highlightjs.org/)を利用。
