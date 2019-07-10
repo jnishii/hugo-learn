@@ -1,5 +1,5 @@
 ---
-title: ユーザ管理
+title: 各種設定
 weight: 5
 ---
 
@@ -65,7 +65,7 @@ $ sudo dscl . create /Users/<user> Password \*
 ```
 $ sudo mkdir /Users/<user>
 $ sudo dscl . create /Users/<user> NFSHomeDirectory /Users/<user>
-$ sudo cp -a /System/Library/User\ Template/English.lproj /Users/$TARGETUSER
+$ sudo cp -a /System/Library/User\ Template/English.lproj/ /Users/<user>
 $ chown -R <user> /Users/<user>
 $ chgrp -R <group> /Users/<user>
 ```
