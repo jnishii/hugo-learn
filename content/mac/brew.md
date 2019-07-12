@@ -31,15 +31,13 @@ weight: 2
 - nkf: 文字コード変換ツール
 - rmtrash: rmしたものを完全に消さないで，ゴミ箱に移動してくれる
 - [pandoc](http://sky-y.github.io/site-pandoc-jp/users-guide/): markdownとかlatexとかdocxとかを相互に変換するツール
-- sshfs: ssh経由でリモートディレクトリをマウントするコマンド．[osxfuse](https://osxfuse.github.io/)もインストールしておく
 - unar: ファイル名が文字化けしない解凍ソフト
 - [ffmpeg](https://www.ffmpeg.org/): ビデオやオーディオファイルをいろいろな形式に変換したりできるソフト
 - [Krypton app](https://krypt.co/docs/start/installation.html)
 ```
-$ brew install --japanese --cocoa --with-gnutls -v emacs
+$ brew install emacs --with-cocoa
 $ brew install lv gnupg nkf rmtrash
 $ brew install pandoc markdown
-$ brew install sshfs
 $ brew install unar
 $ brew install ffmpeg
 $ brew install kryptco/tap/kr
@@ -63,16 +61,19 @@ $ brew tap caskroom/cask
 - [Atom](https://atom.io/): エディタ([こちら](/editors/atom)にも解説あり)
 - [Sublime Text 3](https://www.sublimetext.com/): エディタ([こちら](/editors/sublime)にも解説あり)
 - [grace](http://plasma-gate.weizmann.ac.il/Grace/): グラフプロッタ
-- php70: macのデフォルトのphp以外を使う時
+- sshfs: ssh経由でリモートディレクトリをマウントするコマンド．[osxfuse](https://osxfuse.github.io/)もインストールしておく
+
 
 ```
 $ brew cask install xquartz     # R, grace, その他いくつかのアプリで必要
 $ brew cask install atom  			# エディタAtom
 $ brew cask install sublime-text	#	エディタSublime Text 3
 $ brew cask install google-japanese-ime	# google日本語入力
+$ brew cask install qlmarkdown  # .md のQuickLookプレビュー
+$ brew cask install osxfuse
+$ brew install sshfs
 $ brew tap homebrew/x11 # graceのインストールのため
 $ brew install grace
-$ brew cask install qlmarkdown  # .md のQuickLookプレビュー
 ```
 
 ### Rのインストール<a id="R"></a>
