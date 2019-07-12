@@ -26,7 +26,6 @@ weight: 2
 
 適当に必要なソフトを見繕ってインストール。
 
-- [emacs](http://emacsformacosx.com) (Gnu Emacs)
 - lv:  多言語対応のlessみたいなの
 - nkf: 文字コード変換ツール
 - rmtrash: rmしたものを完全に消さないで，ゴミ箱に移動してくれる
@@ -35,7 +34,6 @@ weight: 2
 - [ffmpeg](https://www.ffmpeg.org/): ビデオやオーディオファイルをいろいろな形式に変換したりできるソフト
 - [Krypton app](https://krypt.co/docs/start/installation.html)
 ```
-$ brew install emacs --with-cocoa
 $ brew install lv gnupg nkf rmtrash
 $ brew install pandoc markdown
 $ brew install unar
@@ -58,6 +56,7 @@ $ brew tap caskroom/cask
 
 ### いろいろインストール
 
+- [emacs](http://emacsformacosx.com) (Gnu Emacs)
 - [Atom](https://atom.io/): エディタ([こちら](/editors/atom)にも解説あり)
 - [Sublime Text 3](https://www.sublimetext.com/): エディタ([こちら](/editors/sublime)にも解説あり)
 - [grace](http://plasma-gate.weizmann.ac.il/Grace/): グラフプロッタ
@@ -66,6 +65,7 @@ $ brew tap caskroom/cask
 
 ```
 $ brew cask install xquartz     # R, grace, その他いくつかのアプリで必要
+$ brew cask install emacs
 $ brew cask install atom  			# エディタAtom
 $ brew cask install sublime-text	#	エディタSublime Text 3
 $ brew cask install google-japanese-ime	# google日本語入力
