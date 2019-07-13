@@ -200,3 +200,13 @@ $ socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
 ```
 $ ./docker-X.sh
 ```
+
+
+## 便利なDockerイメージ
+
+- [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/)
+	- Julia, Python, Rを使える
+	- jupyter/scipy-notebook と jupyter/r-notebook の合体版
+	- 関連イメージや詳細情報は[Selecting an Image](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)
+- [rocker/verse](https://hub.docker.com/r/rocker/verse)
+	- [githubのページはこちら](https://github.com/rocker-org/rocker)
