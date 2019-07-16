@@ -1,5 +1,6 @@
 ---
 title: 学習方法
+weight: 30
 ---
 
 
@@ -26,12 +27,15 @@ title: 学習方法
 
 学習(訓練)においては，誤差関数$E(\boldsymbol{w})$を最小化するようにパラメータ($\boldsymbol{w}$)を更新する。
 勾配降下法を用いると次式のようになる。
+
 $$
-\begin{align*}
-\boldsymbol{w}&\leftarrow\boldsymbol{w}-\epsilon\nabla E(\boldsymbol{w})\\
+\begin{align}
+\boldsymbol{w}&\leftarrow\boldsymbol{w}-\epsilon\nabla E(\boldsymbol{w})\\\\\\
 \nabla E&=\frac{\partial E}{\partial\boldsymbol{w}}
-\end{align*}
+\end{align}
 $$
+
+
 例えば，平均二乗誤差を用いる場合は$\displaystyle E(\boldsymbol{w})=\frac{1}{2}\sum_{n=1}^N ||\boldsymbol{d}_n-\boldsymbol{y}_n||^2$であり，右辺の$\boldsymbol{y}_n$は陽に$\boldsymbol{w}$を使って書き直せるので， 各素子の入出力を規定する関数$y=\boldsymbol{f}(\boldsymbol{x};\boldsymbol{w})$が微分可能な関数(sigmoid関数など)であれば，解析的に$\boldsymbol{w}$に対する微分計算が可能。各入力値に対する$\nabla E$を計算することでパラメータ更新をできる。
 
 

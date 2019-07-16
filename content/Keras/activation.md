@@ -1,5 +1,6 @@
 ---
 title: 形式ニューロンと活性化関数
+weight: 10
 ---
 
 ## McCulloch & Pittsによる神経細胞モデル
@@ -7,11 +8,12 @@ title: 形式ニューロンと活性化関数
 McCulloch & Pittsが1943年に提案した神経細胞の入出力モデル([形式ニューロン](https://ja.wikipedia.org/wiki/%E5%BD%A2%E5%BC%8F%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%AD%E3%83%B3))は以下の通り。
 
 $$
-\begin{align*}
-y&=f(x-\theta)\\
+\begin{align}
+y&=f(x-\theta)\\\\\\
 x&=\sum_{i=1}^Nw_iy_i
-\end{align*}
+\end{align}
 $$
+
 ここで，$x$と$y$はそれぞれ素子(神経細胞)の内部状態と出力,
 $y_i$と$w_i$は第$i$素子からの入力信号と，入力信号による影響の大きさを決める結合荷重, $f:x\to y$は
 [活性化関数](https://ja.wikipedia.org/wiki/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0#%E7%B7%9A%E5%BD%A2%E7%B5%90%E5%90%88%EF%BC%88%E5%8D%98%E7%B4%94%E3%83%91%E3%83%BC%E3%82%BB%E3%83%97%E3%83%88%E3%83%AD%E3%83%B3%EF%BC%89)。
@@ -40,11 +42,11 @@ Perceptronの論文は[こちら](http://citeseerx.ist.psu.edu/viewdoc/download?
 $$
 f(x)=
 \begin{cases}
-1 & (x\ge\theta)\\
+1 & (x\ge\theta)\\\\\\
 0 & (otherwise)
 \end{cases}
 $$
-ただし，$\theta$はしきい値。
+ただし，$\theta$ はしきい値。
 
 **特徴**
 - McCulloch & Pittsにより1943年に提案された神経細胞の入出力モデル
@@ -88,7 +90,7 @@ $$
 ### 正規化線形関数 (Rectified Linear function)
 
 $$
-f(x) = max(0,x)
+f(x) = \max(0,x)
 $$
 
 - この関数を活性化関数とする素子をReLU(Rectified Linear Unit)と呼ぶ。
