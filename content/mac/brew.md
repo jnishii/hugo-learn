@@ -117,7 +117,7 @@ $ nodebrew use latest
 $ echo 'export PATH=$PATH:~/.nodebrew/current/bin' >> ~/.bash_profile
 ```
 
-## その他いろいろ
+## brewコマンドの使い方
 
 - 更新のあるformula確認
 ```
@@ -136,13 +136,11 @@ $ brew info <formula name>
 ```
 $ brew list
 ```
-- 他のマシンと同じパッケージをまとめてインストールする方法
-
-以下を実行すると，インストールされているファイル一覧(Brewfile)ができる。
+- インストールされているパッケージ一覧(Brewfile)の作成
 ```
 $ brew bundle dump
 ```
-これを新規マシンに持って行って以下を実行すると同じパッケージをインストールできる。
+- パッケージ一覧(Brefile)に記載されているパッケージを一括インストール
 ```
 $ brew bundle
 ```
