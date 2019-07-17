@@ -94,7 +94,7 @@ Cohen'd と Hedges' g のいずれについても計算方法は不明で，上�
 
 「新しい検定方法」についてのCummingの講義がYoutubeに公開されています。
 
--[The New Statistics: Confidence Intervals, NHST, and p Values (Workshop Part 1)](https://www.youtube.com/watch?v=iJ4kqk3V8jQ)
--ほかにもいろいろ
+- [The New Statistics: Confidence Intervals, NHST, and p Values (Workshop Part 1)](https://www.youtube.com/watch?v=iJ4kqk3V8jQ)
+- ほかにもいろいろ
 [The New Statistics: Research Integrity & the New Statistics (Workshop Part 2)](https://www.youtube.com/watch?v=wb0rnZBlcRg)
 - ["Cumming" "new statistics" でYoutubeを検索](https://www.youtube.com/results?search_query=Cumming+new+statistics)

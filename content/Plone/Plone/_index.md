@@ -5,7 +5,7 @@ weight: 10
 
 若干の設定メモやトラブル対策集と，Plone4からPlone5への移行の苦労話
 
-##　設定メモ
+## 設定メモ
 
 - [community.plone.org](https://community.plone.org/): 困ったときにはじめに検索するサイト
 
@@ -84,7 +84,7 @@ msgstr "H:i"
 
 ## トラブル対策
 
-### [トラブル] ページの履歴を確認し，古いバージョンに戻そうとすると`insufficient priviledge (十分な権限がりません)`と表示されてしまいます。
+### Q. ページの履歴を確認し，古いバージョンに戻そうとすると`insufficient priviledge (十分な権限がりません)`と表示されてしまう。
 
 Plone5.1.x (?)あたりのCMFEditionsにあるrevertversion.pyの不具合らしい。
 以下のサイトの通り修正すればOK。
@@ -93,12 +93,12 @@ Plone5.1.x (?)あたりのCMFEditionsにあるrevertversion.pyの不具合らし
 
 
 
-### [トラブル] ページの更新履歴が表示されない
+### Q. ページの更新履歴が表示されない
 
 時計アイコンをクリックすると表示されるはずのページ更新履歴一覧がなぜか表示されなくなった。
 とりあえず，URLに`@@historyview` を加えると履歴表示できた。
 
-### [トラブル] Couldn’t find index page for …
+### Q. Couldn’t find index page for …
 
 buildoutのときに最新パッケージをダウンロードできないとき等に出るエラー。
 pypi.python.orgがhttpに非対応になったことが原因の場合は，Pythonのディレクトリにある
@@ -114,7 +114,7 @@ index = https://pypi.python.org/simple
 
 - 情報源: [Buildout not working / Couldn’t find index page for / Couldn’t find a distribution / Disabling non HTTPS access to APIs on PyPI](https://community.plone.org/t/buildout-not-working-couldnt-find-index-page-for-couldnt-find-a-distribution-disabling-non-https-access-to-apis-on-pypi/5069/9)
 
-### [トラブル] proxy内でbuildoutできない
+### Q. proxy内でbuildoutできない
 以下のようなshell scriptを用意して，`zinstance/`以下で実行する。
 ```
 #!/bin/bash
@@ -128,7 +128,7 @@ $ sudo -E -u plone_buildout http_proxy="http://<proxy server>" bin/buildout
 ```
 
 
-### [トラブル]　Step languagetool has an invalid import handler
+### Q. Step languagetool has an invalid import handler
 
 1. 空のploneをインストールして，ZMIで export portal_languages.zexp
 2. 元のploneで，portal_languagesを消去して，上記zexpを読み込む
@@ -137,7 +137,7 @@ $ sudo -E -u plone_buildout http_proxy="http://<proxy server>" bin/buildout
 
 > Thank you, that was the tip I needed. No 3rd party products are installed now, but perhaps I had tried out something years ago and some crud was left behind? In the ZMI, I created a new dummy Plone site, exported portal_languages to local disk, went back to my main Plone site, deleted portal_languages there, imported the file from disk, and THEN was able to continue with my Plone 4 -> Plone 5 migration and run the import tool successfully. – Jeff Shafer Oct 10 '15 at 16:14 
 
-### [トラブル] buildout-cache以下の何かにpermission deniedと表示される
+### Q. buildout-cache以下の何かにpermission deniedと表示される
 
 以下を実行する。
 ```
@@ -145,14 +145,14 @@ $ chmod -R g+r <Plone directory>/buildout-cache
 $ chmod 777 <Plone directory>/zinstance
 ```
 
-### [トラブル] AttributeError: 'NoneType' object has no attribute 'items' 
+### Q. AttributeError: 'NoneType' object has no attribute 'items' 
 
 コンテンツのアップグレード時に出るエラー。
 
 対策: [migration from plone 4.0.10 to plone 4.1.3 fails](http://plone.293351.n2.nabble.com/migration-from-plone-4-0-10-to-plone-4-1-3-fails-td7055584.html)
 
 
-### [トラブル] zexpのimportがうまくできない
+### Q. zexpのimportがうまくできない
 
 ```
 Zope Error
@@ -165,7 +165,7 @@ ZMI上で，portal_catalog, referene_catalog, uid_catalogの更新をする(上�
 
 - 参考: [reference_catalog erro](http://plone-users.narkive.com/0O7HUeQp/reference-catalog-error)
 
-### [トラブル] POSKeyError: ‘No blob file’ content in Plone
+### Q. POSKeyError: ‘No blob file’ content in Plone
 
 Plone コンテンツを新しいサイトに引っ越した時にこのエラーがでることがある。blobstorageの移動で抜け落ちたファイルやファイル情報があるのが原因。
 このエラーが出たときに，ファイルは有るのに，ファイル名が無くなっていたりといったトラブルもあった。
@@ -320,7 +320,9 @@ for brain in brains:
 ```
 brains[cnt].getPath()
 ```
+
 関連情報URL
+
 - [Upgrade failed - Plone 4.3.8 to Plone 5.0.2
 ](https://stackoverflow.com/questions/36127714/upgrade-failed-plone-4-3-8-to-plone-5-0-2)
 - [Manually Removing Local Persistent Utilities](https://docs.plone.org/manage/troubleshooting/manual-remove-utility.html)
