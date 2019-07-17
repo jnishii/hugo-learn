@@ -11,12 +11,29 @@ anaconda/python をインストールしていれば，Jupyter Notebookももれ
 $ jupyter notebook
 ```
 
-## 起動オプション
-起動オプションは`jupyter notebook ―help`で表示される。オプションを指定するための設定ファイルを作りたいときは，まず以下のコマンドで設定ファイルを生成する。
+## 起動オプションと設定ファイル
+
+起動オプションは`jupyter notebook ―help`で表示される。
+オプションを指定するための設定ファイルを作りたいときは，まず以下のコマンドで設定ファイルを生成する。
 ```
 $ jupyter notebook --generate-config
 ```
 これで，`~/.jupyter/jupyter_notebook_config.py`に設定ファイルができるので，必要に応じてこれをいじる。
+
+### tokenの指定
+
+jupyter notebookに接続するときにブラウザ上で入力しないといけないtokenを，事前に設定ファイルに登録しておき，起動オプションで指定することができる。jupyterをshell scriptで起動するとき便利。
+
+- `~/.jupyter/jupyter_notebook_config.py`
+```
+c.NotebookApp.token = 'xxxxx'
+```
+- jupyter notebookの起動オプションには以下をつける
+```
+--NotebookApp.password='xxxxx'
+```
+
+
 
 ## 拡張機能のインストール
 
