@@ -39,7 +39,7 @@ $ docker build --force-rm=true -t <イメージ名> .
 
 プロキシ設定が必要なときには以下の指定する。
 ```
-docker build --force-rm=true -t <イメージ名> --build-arg http_proxy=http://proxy:port --build-arg https_proxy=http://proxy:port .
+$ docker build --force-rm=true -t <イメージ名> --build-arg http_proxy=http://proxy:port --build-arg https_proxy=http://proxy:port .
 ```
 
 ## docker の実行
@@ -75,7 +75,7 @@ $ docker run -v /Users/pochi/:/home/pochi/ --rm <イメージ名>
 特に`docker build`で`--force-rm=true`の指定をしなかったときにはどんどんたまる。
 ダウンロードしたイメージがたまっていることもある。
 
-- [docker ps](https://docs.docker.com/engine/reference/commandline/ps/): 
+- $ [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
 	- コンテナの一覧表示
 	- 停止中のものも表示するときは`-a`をつける
 - `$ docker rm <コンテナID>`: 不要なコンテナがあったら，コンテナのIDを確認して削除する。ID指定は最初の3文字のみでもOK。
