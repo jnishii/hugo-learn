@@ -11,29 +11,6 @@ anaconda/python をインストールしていれば，Jupyter Notebookももれ
 $ jupyter notebook
 ```
 
-## 起動オプションと設定ファイル
-
-起動オプションは`jupyter notebook ―help`で表示される。
-オプションを指定するための設定ファイルを作りたいときは，まず以下のコマンドで設定ファイルを生成する。
-```
-$ jupyter notebook --generate-config
-```
-これで，`~/.jupyter/jupyter_notebook_config.py`に設定ファイルができるので，必要に応じてこれをいじる。
-
-### tokenの指定
-
-jupyter notebookに接続するときにブラウザ上で入力しないといけないtokenを，事前に設定ファイルに登録しておき，起動オプションで指定することができる。jupyterをshell scriptで起動するとき便利。
-
-- `~/.jupyter/jupyter_notebook_config.py`
-```
-c.NotebookApp.token = 'xxxxx'
-```
-- jupyter notebookの起動オプションには以下をつける
-```
---NotebookApp.password='xxxxx'
-```
-
-
 
 ## 拡張機能のインストール
 
@@ -122,7 +99,38 @@ current=!pwd
 %automagic=True
 ```
 
-## いろいろな設定
+## 各種設定
+
+起動オプションは`jupyter notebook ―help`で表示される。
+オプションを指定するための設定ファイルを作りたいときは，まず以下のコマンドで設定ファイルを生成する。
+```
+$ jupyter notebook --generate-config
+```
+これで，`~/.jupyter/jupyter_notebook_config.py`に設定ファイルができるので，必要に応じてこれをいじる。
+
+### tokenの指定
+
+jupyter notebookに接続するときに入力を要求されるtokenを，事前に設定ファイルに登録したり，起動オプションで指定したりできる。
+
+- `~/.jupyter/jupyter_notebook_config.py`
+```
+c.NotebookApp.token = 'xxxxx'
+```
+- jupyter notebookの起動オプションでの指定
+```
+--NotebookApp.token='xxxxx'
+```
+
+### キーバインディングを emacs styleにする
+
+[jupyter-emacskeys](https://github.com/rmcgibbo/jupyter-emacskeys)をインストール
+```
+$ pip install jupyter-emacskeys
+```
+
+
+## Tips
+
 ### 特定のセルを除いたシートを作る
 
 1. 除きたいセルにタグ(例えば，`remove_cell`)をつける。タグは，View/Cell Toolbar/Tagsで入力可能に。
@@ -171,14 +179,6 @@ $ R
 $ conda create -n r -c r r-irkernel
 ```
 -->
-
-
-### キーバインディングを emacs styleにする
-
-[jupyter-emacskeys](https://github.com/rmcgibbo/jupyter-emacskeys)をインストール
-```
-$ pip install jupyter-emacskeys
-```
 
 ### Markdown と jupyter notebook形式の変換
 
@@ -247,4 +247,11 @@ conda install -c conda-forge nbpresent
 以下のサイトに書いてあるようににショートカット設定をする。
 
 [Jupyter Notebook Ctrl+Shift+- (splitting cell) does not work](https://stackoverflow.com/questions/49485753/jupyter-notebook-ctrlshift-splitting-cell-does-not-work)
+
+## jupyterのファイルのビューア
+
+- [nbviewer-app](https://github.com/tuxu/nbviewer-app)
+```
+$ brew cask install jupyter-notebook-viewer
+```
 
