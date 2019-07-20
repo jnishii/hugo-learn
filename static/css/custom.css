@@ -1,12 +1,12 @@
 .logotext {
 	font-size: 160%;
 	font-weight: 400;
-	line-height: 60%;
-  padding: .5rem 0 0 0;
+	line-height: 95%;
+  padding: .4rem 0 0 0;
 	color: white;
 }
 
-#side1ar {
+#sidebar {
     font-weight: 400 !important;
     line-height: 1.5;
     letter-spacing: -.5px;

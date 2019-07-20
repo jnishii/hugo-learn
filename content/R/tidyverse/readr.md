@@ -44,6 +44,14 @@ Rの基本関数`read.csv()`に比べて10倍くらい速いらしい。
 read_csv("diet.csv", skip=2) # 2行読み飛ばす
 read_csv("diet.csv", comment="#") # "#"で始まる行を読み飛ばす
 ```
+末尾を読み飛ばしたいときには，他のコマンドと組み合わせてなんとかする。
+以下は，初めの10行と，終わりの3行をスキップする例。
+```
+read_lines("diet.csv",skip=10) %>% 
+	head(-3) %>%
+	read_csv()
+
+```
 2. 列名は除外する
 ```
 read_csv("diet.csv",col_names = FALSE)
