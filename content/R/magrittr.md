@@ -20,32 +20,32 @@ install.packages("magrittr")
 
 UNIXのパイプ`|`と同様の機能。以下の2文はそれぞれ同じ意味になる。
 (ほとんどが[Package `magittr'より](https://cran.r-project.org/web/packages/magrittr/magrittr.pdf)にある例)
-```
+```R
 x %>% f(y)  # パイプで渡された変数が，第一引数になる
 f(x,y)
 ```
-```
+```R
 y%>%f(x,.) # .で渡す場所をしていできる
 f(x,y)
 ```
-```
+```R
 z%>%f(x,y,arg=.)
 f(x,y,z)
 ```
 いろいろな利用例
-```
+```R
 rnorm(100) %>% {c(min(.), mean(.), max(.))} %>% floor
 y <- x %>% f() # y<-f(x) と同じ
 ```
 無名関数を定義して使うこともできる。
-```
+```R
 data %>% {
 	group_by(.)
 	summary(.)
 	}
 ```
 下は，上の例と同様
-```
+```R
 data %>% (function(x)){
 	group_by(x)
 	summary(x)
@@ -78,7 +78,7 @@ df <- (df1+df2) %>%
 library(magrittr)
 ```
 以下はどれも同じ意味
-```
+```R
 x %<>% f()
 x <- x %>% f()
 x <- f(x)
@@ -89,7 +89,7 @@ x <- f(x)
 library(magrittr)
 ```
 以下のようにf,gで順次処理する途中経過の表示をしたいときに使う。plot()に渡すこともできる。
-```
+```R
 data %>% f() %T>% print() %>% g()
 ```
 もし上の例で`%T>%`の代わりに`%>%`を使うと `print()`の出力が`g()`に渡されて，おかしなことになる。

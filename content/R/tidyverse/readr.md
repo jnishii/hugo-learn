@@ -39,18 +39,18 @@ read_csv("a,b
 
 Rの基本関数`read.csv()`に比べて10倍くらい速いらしい。
 
+
 1. ヘッダ部の読み飛ばし方法
-```
+```R
 read_csv("diet.csv", skip=2) # 2行読み飛ばす
 read_csv("diet.csv", comment="#") # "#"で始まる行を読み飛ばす
 ```
 末尾を読み飛ばしたいときには，他のコマンドと組み合わせてなんとかする。
 以下は，初めの10行と，終わりの3行をスキップする例。
-```
+```R
 read_lines("diet.csv",skip=10) %>% 
 	head(-3) %>%
 	read_csv()
-
 ```
 2. 列名は除外する
 ```
@@ -64,6 +64,8 @@ read_csv("diet.csv", col_names = c("x", "y", "z"))
 ```
 read_csv("diet.csv", na = ".")
 ```
+
+
 
 ## ファイル出力
 
@@ -84,7 +86,7 @@ read_csv("diet.csv", na = ".")
 
 以下は，ページャ機能`utils::page()`を使ってrdsファイル読み込んで表示するRスクリプト例。
 
-```
+```R
 height = 30L  # for example
 width = 160L
 options(
@@ -107,7 +109,7 @@ csvファイルを見るなら，スクリプト中の`read_rds`を`read_csv`に
 
 ### あるパス内のcsvファイルを片っ端読み込む
 
-```
+```R
 library('tidyverse')
 
 source_dir="/home/someone/data/"
@@ -119,7 +121,7 @@ files <- list.files(path=source_dir, pattern=".csv$", full.names=T) %>%
 この例では，ファイルから読み込んだデータフレームが順にrbindで結合される。
 
 nested dataframeにする方法もある。
-```
+```R
 data <- list.files(path=source_dir, pattern=".csv$", full.names=T) %>%
 	data_frame(filename=.) %>%    
 	mutate(contents=map(filename, ~ read_csv(file.path(source_dir, .)))

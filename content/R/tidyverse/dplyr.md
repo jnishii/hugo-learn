@@ -62,10 +62,12 @@ library(tidyverse)
 	```
 
 `summarise()`や`mutate()`には変形版`*_all`, `*_each`, `*_at`, `*_if`がある。
+
 - `*_all`: すべての列に関数を適用
 	```
 	length_dat %>% mutate_all(funs(. / 2.54))
 	length_dat %>% mutate_all(funs(inches = . / 2.54))
+	```
 - `*_at`: 特定の名前の列に関数を適用
 	```
 	starwars %>% summarise_at(c("height", "mass"), mean)
@@ -80,7 +82,9 @@ library(tidyverse)
 	iris %>% mutate_if(is.double, as.integer) # doubleの列をintegerにする
 	```
 
-## `nest`, `unnest`: データフレームの階層化
+## いろいろな関数
+### `nest`, `unnest`: データフレームの階層化
+
 - **[nest()](https://tidyr.tidyverse.org/reference/nest.html)**: データフレームを階層化
 	```
 	dataset %>% nest(-city) # city コラムを外のほうに残す
@@ -88,14 +92,14 @@ library(tidyverse)
 - **[unnest()](https://tidyr.tidyverse.org/reference/unnest.html)**: 階層化したデータフレームをもどす
 
 
-## `bind_rows`, `bind_cols`: 列や行の追加
+### `bind_rows`, `bind_cols`: 列や行の追加
 
 同じ列幅や行数の2つのデータフレームを結合させるときには[bind_rows()](https://dplyr.tidyverse.org/reference/bind.html)や[bind_cols()](https://dplyr.tidyverse.org/reference/bind.html)を使う。
 `rbind()`や`cbind()`のデータフレーム用関数。
 
 
 
-## `join`: tibbleの結合
+### `join`: tibbleの結合
 
 キーとなる列情報を使って2のtibbleを結合するには[full_join()](https://dplyr.tidyverse.org/reference/join.html)とか，[right_joint()](https://dplyr.tidyverse.org/reference/join.html)とかを使う。データベース関数のjoinと同じようなもの。
 

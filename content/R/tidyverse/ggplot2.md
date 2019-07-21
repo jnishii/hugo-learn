@@ -131,7 +131,6 @@ ggplot2よりも簡単にグラフ作成ができる。
 
 ```
 options(repr.plot.width=8, repr.plot.height=4)
-
 ggplot(...)+...
 ```
 これでjupyter上でのグラフの大きさや余白を調整できる。
@@ -156,7 +155,8 @@ aes_q(x=as.name(xcol),y=as.name(group))
 無理やり discrete colormap　を与えようとすると”Error: Continuous value supplied to discrete scale”と怒られる。group情報のある列をcharacterに変換しておくのが，多分一番簡単。
 
 ```
-q<- data %>% mutate_at(vars(matches(group)),as.character)  %>%
+q<- data %>% 
+	mutate_at(vars(matches(group)),as.character)  %>%
 	ggplot() %>%
 	geom_line(mapping=aes_string(x=xcol,y=ycol,group=group,color=group))
 ```
@@ -179,10 +179,9 @@ q<- data %>% mutate_at(vars(matches(group)),as.character)  %>%
 都市(city) ごとに異なる線を描くには以下のようにする。
 
 ```
-p<- data %>% arrange(city,time) %>%
+p<-data %>% arrange(city,time) %>%
 	ggplot() %>%
 	plot_line(aes_string(x=time,y=temperature,group=city,color=city))
-
 print(p)
 ```
 
@@ -192,11 +191,8 @@ print(p)
 ```
 p<-ggplot(data1) +
 	 geom_line(aes_string(x=time,y=temperature))
-
 p2<-geom_line(data2, mapping=aes(x=time,y=humidity))
-
 print(p1+p2)
-
 ```
 
 ### アニメーションを作る
@@ -205,7 +201,6 @@ print(p1+p2)
 [gganimate](https://github.com/thomasp85/gganimate)を使う。
 
 **方法2:**
-
 [plotly](https://plot.ly/ggplot2/animations/)の関数`animation_opts()`を使う。
 
 
