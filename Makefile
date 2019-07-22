@@ -1,5 +1,5 @@
 build:
-	bin/learn2local
+	bin/learn2public
 
 zeus:
 	bin/learn2zeus
