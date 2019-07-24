@@ -62,7 +62,7 @@ options(repos=local({ r <- getOption("repos"); r["CRAN"] <- "http://cran.ism.ac.
 ```
 
 ### git
-`~/.gitconfig`に以下を追加する。
+`~/.gitconfig`に以下を追加する。後半のエントリは，普段sshでgithubに接続している人が，proxy経由での接続もできるようにするための設定。
 ```
 [http]
 	proxy = http://<proxyserver>:<port>
@@ -70,6 +70,8 @@ options(repos=local({ r <- getOption("repos"); r["CRAN"] <- "http://cran.ism.ac.
 	proxy = https://<proxyserver>:<port>
 [url "https://"]
         insteadOf = git://
+[url "https://github.com/"]
+	insteadOf = git@github.com:
 ```
 
 以下のコマンドを実行するのでも良い。
@@ -77,6 +79,7 @@ options(repos=local({ r <- getOption("repos"); r["CRAN"] <- "http://cran.ism.ac.
 $ git config --global http.proxy http://<proxyserver>:<port>
 $ git config --global https.proxy http://<proxyserver>:<port>
 $ git config --global url."https://".insteadOf git://
+$ git config --global url."https://github.com/".insteadOf git@github.com:
 $ git config --list  # 設定の確認
 ```
 この設定を削除する時に以下の通り。
@@ -85,6 +88,7 @@ $ git config --list  # 設定の確認
 $ git config --global --unset http.proxy
 $ git config --global --unset https.proxy
 $ git config --global --unset url."https://".insteadOf git://
+$ git config --global --unset url."https://github.com/".insteadOf git@github.com:
 $ git config --list  # 設定の確認
 ```
 頻繁にproxyの設定/解除が必要ならshell scriptにすると便利。
