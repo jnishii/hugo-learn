@@ -38,3 +38,15 @@ weight: 10
 $ git push -u origin test
 ```
 `-u`は新規ブランチを始めてサーバにアップロードする時につける。2回目以降は省略可
+
+## branchを消したい
+
+```
+$ git reset --hard # resets git staging and your tracked files to the last commit
+$ git clean -fd    # deletes untracked files (this is optional)
+$ git checkout master
+$ git branch -D <branch to remove>
+```
+
+参考URL: [How to git discard branch without checkout?
+](https://stackoverflow.com/questions/16173761/how-to-git-discard-branch-without-checkout)
