@@ -14,6 +14,4 @@ library("stringr")
 ```
 
 ## 情報源
-- [stringr](https://stringr.tidyverse.org/)
-
-このページにチートシートがあるので，これを見るとだいたい分かる。
+- [stringr](https://stringr.tidyverse.org/): このページにチートシートがあるので，これを見るとだいたい分かる。

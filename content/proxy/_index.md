@@ -62,6 +62,7 @@ options(repos=local({ r <- getOption("repos"); r["CRAN"] <- "http://cran.ism.ac.
 ```
 
 ### git
+
 `~/.gitconfig`に以下を追加する。後半のエントリは，普段sshでgithubに接続している人が，proxy経由での接続もできるようにするための設定。
 ```
 [http]
@@ -91,13 +92,8 @@ $ git config --global --unset url."https://".insteadOf git://
 $ git config --global --unset url."https://github.com/".insteadOf git@github.com:
 $ git config --list  # 設定の確認
 ```
-頻繁にproxyの設定/解除が必要ならshell scriptにすると便利。
-例えば以下を`setGitProxy`とかいう名前にしてパスの通ったところに置いておく。
-<script src="https://gist.github.com/jnishii/05104690e6fe901f975705a74a1317ae.js"></script>
-保存後に`chmod +x setGitProxy`をお忘れなく。
-
-ただし，ここまでの設定だとsshによるgithubとの接続はできない。
-ssh接続をできるようにするには，`~/.ssh/config`に，以下のようにHostName,Port,PoxyCommandの設定を追加する。
+<!--
+ただし，sshによるgithubとの接続をできるようにしたい方は，さらに，`~/.ssh/config`に，以下のようにHostName,Port,PoxyCommandの設定を追加する。
 ```
 Host github.com
   User <ユーザ名>
@@ -106,8 +102,14 @@ Host github.com
   Port 443
   ProxyCommand nc -X connect -x <proxyserver>:<port> %h %p
 ```
-
 本当は接続ネットワークに応じた自動設定をできるとよいのだが...
+-->
+
+頻繁にproxyの設定/解除が必要ならshell scriptにすると便利。
+例えば以下を`setGitProxy`とかいう名前にしてパスの通ったところに置いておく。
+<script src="https://gist.github.com/jnishii/05104690e6fe901f975705a74a1317ae.js"></script>
+保存後に`chmod +x setGitProxy`をお忘れなく。
+
 
 ### curl
 `~/.curlrc`に以下を追加する。
