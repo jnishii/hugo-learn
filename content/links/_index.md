@@ -45,6 +45,7 @@ Bitalino：バイオセンサーを自作するためのキット](http://wired.
 - [bullet](https://pybullet.org/wordpress/)
 - [blender](https://www.blender.org/download/)
 - [webots](https://cyberbotics.com)
+- [v-rep](http://www.coppeliarobotics.com)
 
 ### 心理実験での刺激呈示用ソフトウェア
 
