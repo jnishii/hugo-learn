@@ -87,6 +87,21 @@ c.Spawner.default_url = ''  # こちらにした
 ```
 
 
+## 宿題の作り方
 
+### 作れるセル
+詳しくは[ここ](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html)
 
+1. “Manually graded answer” cells
+	- 人力採点用セル。回答入力用セルを1つのみ用意。
+2. "Manually graded task” cells
+	- 人力採点用セル。回答入力用セルを複数用意。
+	- `=== BEGIN MARK SCHEME ===`, `=== END MARK SCHEME ===`で囲んだ部分は学生用ファイルには出力されない。(採点時とフィードバック時に表示される)
+3. “Autograded answer” cells
+	- 自動採点の解答部分を含むセル
+	- 解答部分は，`BEGIN SOLUTION`と`END SOLUTION`で囲む。
+4. “Autograder tests” cells
+	- 自動採点のために実行する動作確認用命令文用セル
+	- 実行時にエラーが起きなかったら得点。エラーが生じたら0点
+	- 動作確認用命令文を隠したい時には，`### BEGIN HIDDEN TESTS`, `END HIDDEN TESTS`で囲む。
 
