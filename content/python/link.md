@@ -24,9 +24,11 @@ title: リンク集
 ### その他のクラウドサービス
 
 - [coding ground](https://www.tutorialspoint.com/codingground.htm)
+  - 75以上のプログラミング言語を使えるサイト
 - [binder](https://mybinder.org/)
   - GitHubにおいたjupyter notebookを公開するための環境
 - [CoCalc](https://cocalc.com/)
+  - jupyterやLaTeX，Linux端末を使えるサイト。
 
 ## お勉強資料
 
@@ -71,10 +73,6 @@ title: リンク集
   - Python入門からディープラーニングまでいろいろなコースがある。
 - [プログラミングで彼女を作る](https://paiza.jp/poh/ando/)
   - [よく似たのが他にもいろいろ](https://paiza.jp/paiza_game_history)
-- [CodeIQ](https://codeiq.jp/)
-  - 「プログラミングで問いて遊んでクセになる」というリクルートのサイト
-  - スキルにマッチした企業からスカウトを受けれるらしい
-  - pythonの課題はあまりないけど...(2018/2)
 - [CodinGame](https://www.codingame.com/start)
 - [Codecademy: Learn Python](https://www.codecademy.com/courses/learn-python/)
 - [Python Tutor](http://www.pythontutor.com/)
