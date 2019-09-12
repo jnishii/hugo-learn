@@ -1,7 +1,9 @@
-# nbgrader
+---
+title: nbgrader
+weight: 1
+---
 
-Pythonのプログラムの自動採点システム[nbgrader](https://nbgrader.readthedocs.io/en/stable/index.html)のメモ
-
+Pythonのプログラムの自動採点システム[nbgrader](https://nbgrader.readthedocs.io/en/stable/index.html)
 
 ## nbviewerの思想
 
