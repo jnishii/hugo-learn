@@ -1,5 +1,5 @@
 ---
-title: nbgrader
+title: インストール
 weight: 1
 ---
 
@@ -10,11 +10,9 @@ Pythonのプログラムの自動採点システム[nbgrader](https://nbgrader.r
 [The philosophy and the approach
 ](https://nbgrader.readthedocs.io/en/stable/user_guide/philosophy.html)の冒頭。David Marrがここに出てくるとは思わなかった。
 
-```
-The nbgrader project evolved from my experiences as an instructor and a student. This excerpt from [David Marr’s book, Vision](https://www.dropbox.com/s/olrx40rzzvk1v1i/Marr%20-%20The%20Philosophy%20and%20the%20Approach.pdf?dl=0), is one of the core readings of the class that inspired the creation of nbgrader. ...
-
+> The nbgrader project evolved from my experiences as an instructor and a student. This excerpt from [David Marr’s book, Vision](https://www.dropbox.com/s/olrx40rzzvk1v1i/Marr%20-%20The%20Philosophy%20and%20the%20Approach.pdf?dl=0), is one of the core readings of the class that inspired the creation of nbgrader. ...
 – Jess Hamrick, UC Berkeley
-```
+
 
 ## インストール
 
@@ -65,16 +63,17 @@ nbtest/nbgrader_config.py
 [Using nbgrader with JupyterHub](https://nbgrader.readthedocs.io/en/master/configuration/jupyterhub_config.html)を見ておくとよい。
 
 `Quick Start`で生成される`nbgrader_config.py`に，以下のようにコースディレクトリを指定して，スタッフの`~/.jupyter/`以下においておく。
-複数のコースを作るなら，symbolic linkを張って切り替えるのも一手。
 
 ```
 c = get_config()
 c.CourseDirectory.root = '/home/your_account/nbtest'
 ```
 
-### いじる
+各コース用の`nbgrader_config.py`は，各コースのトップディレクトリに置いておく。
 
-jupyter notebookのタブ"Formgrader"をクリックすると，問題をどんどん作れる。
+### 課題シートを作ってみる
+
+jupyter notebookのタブ"Formgrader"をクリックすると，課題シートをどんどん作れる。
 
 ### 困った点: jupyter notebookのタブ"Formgrader"をクリックしてもエラーが出る
 
@@ -85,23 +84,3 @@ jupyter notebookのタブ"Formgrader"をクリックすると，問題をどん�
 #c.Spawner.default_url = '/lab' # デフォルト
 c.Spawner.default_url = ''  # こちらにした
 ```
-
-
-## 宿題の作り方
-
-### 作れるセル
-詳しくは[ここ](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html)
-
-1. “Manually graded answer” cells
-	- 人力採点用セル。回答入力用セルを1つのみ用意。
-2. "Manually graded task” cells
-	- 人力採点用セル。回答入力用セルを複数用意。
-	- `=== BEGIN MARK SCHEME ===`, `=== END MARK SCHEME ===`で囲んだ部分は学生用ファイルには出力されない。(採点時とフィードバック時に表示される)
-3. “Autograded answer” cells
-	- 自動採点の解答部分を含むセル
-	- 解答部分は，`BEGIN SOLUTION`と`END SOLUTION`で囲む。
-4. “Autograder tests” cells
-	- 自動採点のために実行する動作確認用命令文用セル
-	- 実行時にエラーが起きなかったら得点。エラーが生じたら0点
-	- 動作確認用命令文を隠したい時には，`### BEGIN HIDDEN TESTS`, `END HIDDEN TESTS`で囲む。
-
