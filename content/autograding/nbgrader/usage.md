@@ -34,6 +34,44 @@ weight: 2
 	- 受講生が書き換えてはいけないセル
 	- もし受講生が書き換えた場合，採点時(`nbgrader autograde` step)に，もとの内容に書き戻される。
 
+#### 自動採点に使える関数例
+
+- [nose.tools](https://nose.readthedocs.io/en/latest/testing_tools.html)
+- [numpyより](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
+- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
+- [文字列中に存在する必要のない空白を削除する方法
+](https://qiita.com/ntakuya/items/1153940f3e9c6282b4c5)
+
+#### 関数中の`print()`の出力を評価する
+
+1. `print`文が1回だけ実行される場合
+	- [mockオブジェクトを使う](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
+2. `print`文`が複数回実行される場合([参考](https://stackoverflow.com/questions/2654834/capturing-stdout-within-the-same-process-in-python/3113913#3113913))
+```
+import sys, io, contextlib
+
+class Data(object):
+    pass
+
+@contextlib.contextmanager
+def capture_stdout():
+    old = sys.stdout
+    capturer = io.StringIO()
+    sys.stdout = capturer
+    data = Data()
+    yield data
+    sys.stdout = old
+    data.result = capturer.getvalue()
+
+with capture_stdout() as capture:
+    print("hello")
+    print("goodbye")
+
+print(capture.result)
+assert capture.result =="hello\ngoodbye\n"
+```
+
+
 ### シートの検証
 
 満点をとれる内容になっているかを検証
