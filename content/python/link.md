@@ -66,6 +66,8 @@ title: リンク集
 	- [jupyter形式のシート](https://github.com/ipython-books/cookbook-2nd-code)もある
 - [Elegant Scipy](https://github.com/elegant-scipy/elegant-scipy)
 	- [jupyter形式のシート](https://mybinder.org/v2/gh/elegant-scipy/notebooks/master?filepath=index.ipynb)
+- [Introduction to Data Science: A Python Approach to Concepts, Techniques and Applications](https://github.com/DataScienceUB/introduction-datascience-python-book)
+	- [書籍](https://www.springer.com/gp/book/9783319500164)の参考プログラム集。グラフ作成例が豊富。
 
 ### オンラインのお勉強サイト
 
