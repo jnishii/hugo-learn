@@ -36,11 +36,30 @@ weight: 2
 
 #### 自動採点に使える関数例
 
-- [nose.tools](https://nose.readthedocs.io/en/latest/testing_tools.html)
+- [nose](https://nose.readthedocs.io/en/latest/)
+	- [nose.tools](https://nose.readthedocs.io/en/latest/testing_tools.html)
+	- 以下の`unittest`の関数を概ね使えるみたい。ただし，関数名は`assertEqual`を`assert_equal`と，[PEP8](https://www.python.org/dev/peps/pep-0008/#function-names)準拠に変える。
+- [unittest --- ユニットテストフレームワーク](https://docs.python.org/ja/3/library/unittest.html)
 - [numpyより](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
 - 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
 - [文字列中に存在する必要のない空白を削除する方法
 ](https://qiita.com/ntakuya/items/1153940f3e9c6282b4c5)
+
+### 関数中に，指定した特定の関数を使われているかを確認する。
+
+- 方法1: [Checking whether a specific function has been used](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
+	- 組み込み関数の場合は，この方法ではエラーが出る
+- 方法2: [https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
+
+以下は，`unittest`の`patch`を利用して，関数`show_list`に`enumerate()`が利用されているかを確認する例。`some_args`と`some_args_for_enumerate`は，`show_list()`および，`show_list`内の`enumerate()`に渡される引数。
+
+```
+from unittest.mock import patch
+with patch('__main__.enumerate') as mock_enumerate:
+    show_list(some_args)
+
+mock_enumerate.assert_called_once_with(some_args_for_enumerate)
+```
 
 #### 関数中の`print()`の出力を評価する
 
