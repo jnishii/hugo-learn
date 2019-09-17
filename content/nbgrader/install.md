@@ -1,9 +1,7 @@
 ---
 title: インストール
-weight: 1
+weight: 10
 ---
-
-Pythonのプログラムの自動採点システム[nbgrader](https://nbgrader.readthedocs.io/en/stable/index.html)
 
 ## nbviewerの思想
 

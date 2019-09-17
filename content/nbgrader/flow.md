@@ -1,6 +1,6 @@
 ---
 title: 課題作成から採点まで
-weight: 2
+weight: 20
 ---
 
 ## 課題の作り方
@@ -16,7 +16,6 @@ weight: 2
 
 ### 作れるセルの種類
 
-詳しくは[ここ](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html)
 
 1. “Manually graded answer” cells
 	- 人力採点用セル。回答入力用セルを1つのみ用意。
@@ -34,61 +33,8 @@ weight: 2
 	- 受講生が書き換えてはいけないセル
 	- もし受講生が書き換えた場合，採点時(`nbgrader autograde` step)に，もとの内容に書き戻される。
 
-#### 自動採点に使える関数例
-
-- [nose](https://nose.readthedocs.io/en/latest/)
-	- [nose.tools](https://nose.readthedocs.io/en/latest/testing_tools.html)
-	- 以下の`unittest`の関数を概ね使えるみたい。ただし，関数名は`assertEqual`を`assert_equal`と，[PEP8](https://www.python.org/dev/peps/pep-0008/#function-names)準拠に変える。
-- [unittest --- ユニットテストフレームワーク](https://docs.python.org/ja/3/library/unittest.html)
-- [numpyより](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
-- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
-- [文字列中に存在する必要のない空白を削除する方法
-](https://qiita.com/ntakuya/items/1153940f3e9c6282b4c5)
-
-### 関数中に，指定した特定の関数を使われているかを確認する。
-
-- 方法1: [Checking whether a specific function has been used](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
-	- 組み込み関数の場合は，この方法ではエラーが出る
-- 方法2: [https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
-
-以下は，`unittest`の`patch`を利用して，関数`show_list`に`enumerate()`が利用されているかを確認する例。`some_args`と`some_args_for_enumerate`は，`show_list()`および，`show_list`内の`enumerate()`に渡される引数。
-
-```
-from unittest.mock import patch
-with patch('__main__.enumerate') as mock_enumerate:
-    show_list(some_args)
-
-mock_enumerate.assert_called_once_with(some_args_for_enumerate)
-```
-
-#### 関数中の`print()`の出力を評価する
-
-1. `print`文が1回だけ実行される場合
-	- [mockオブジェクトを使う](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
-2. `print`文`が複数回実行される場合([参考](https://stackoverflow.com/questions/2654834/capturing-stdout-within-the-same-process-in-python/3113913#3113913))
-```
-import sys, io, contextlib
-
-class Data(object):
-    pass
-
-@contextlib.contextmanager
-def capture_stdout():
-    old = sys.stdout
-    capturer = io.StringIO()
-    sys.stdout = capturer
-    data = Data()
-    yield data
-    sys.stdout = old
-    data.result = capturer.getvalue()
-
-with capture_stdout() as capture:
-    print("hello")
-    print("goodbye")
-
-print(capture.result)
-assert capture.result =="hello\ngoodbye\n"
-```
+- [自動採点のTips(本サイト内リンク)](../evaluation)
+- [Developing assignments with the assignment toolbar](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html)
 
 
 ### シートの検証
