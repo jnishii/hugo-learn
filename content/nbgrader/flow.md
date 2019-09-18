@@ -29,6 +29,8 @@ weight: 20
 	- 自動採点のために実行する動作確認用命令文用セル
 	- 実行時にエラーが起きなかったら得点。エラーが生じたら0点
 	- 動作確認用命令文を隠したい時には，`### BEGIN HIDDEN TESTS`, `### END HIDDEN TESTS`で囲む。
+	- 採点後，フィードバック用に生成されるファイルには上記`HIDDEN TESTS`の部分も表示される。隠したい場合は，別ファイルに評価プログラムを作ってそれを呼び出すか，フィードバック用ファイルをさらにカスタマイズする必要あり
+		- [Hiding autograder test code cells in feedback but retaining their output #1156](https://github.com/jupyter/nbgrader/issues/1156)
 5. “Read-only” cells
 	- 受講生が書き換えてはいけないセル
 	- もし受講生が書き換えた場合，採点時(`nbgrader autograde` step)に，もとの内容に書き戻される。
@@ -75,7 +77,8 @@ nbgrader validate --invert release/ps1/*.ipynb
 
 ### 課題シートの配布と回収
 
-[Releasing files to students and collecting submissions](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html#releasing-files-to-students-and-collecting-submissions)
+- [Releasing files to students and collecting submissions](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html#releasing-files-to-students-and-collecting-submissions)
+- 提出された課題シートの回収後は，課題シートの修正・配布はできなくなる。
 
 #### 配布
 
@@ -111,7 +114,9 @@ autograded/{student_id}/{assignment_id}/{notebook_id}.ipynb
 #### フィードバック用htmlの生成
 
 - Formgrader: "Generate Feedback"
-- `nbgrader generate_feedback`: 以下にhtmlファイルができる。
+- `nbgrader generate_feedback`
+
+以下にhtmlファイルができる。(ipynbのシートがフィードバックされるわけではない)
 
 ```
 feedback/{student_id}/{assignment_id}/{notebook_id}.html

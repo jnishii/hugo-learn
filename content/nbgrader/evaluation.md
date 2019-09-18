@@ -3,14 +3,75 @@ title: 自動採点のTips
 weight: 30
 ---
 
-## 自動採点に使える関数例
+## 自動採点に使えるメソッド
+
+どれもエラーが出た時のメッセージ`msg="..."`を引数に追加できる。
+
+### 一般
+
+メソッド | alias | 
+------- | ----- | --------
+`assert_true(x)`||bool(x) is True
+`assert_false(x)`||bool(x) is False
+`assert_is(a, b)`||a is b
+`assert_is_not(a, b)`||a is not b
+`assert_is_none(x)`||x is None
+`assert_is_not_none(x)`||x is not None
+`assert_is_instance(a, b)`||isinstance(a, b)
+`assert_not_is_instance(a, b)`||not isinstance(a, b)
+
+
+### 数値(int, float)の比較
+
+メソッド | alias | 
+------- | ----- | --------
+`assert <expr>` | `ok_(<expr>)`|
+`assert_equal(a,b)`| `eq_(a,b)`|a == b
+`assert_not_equal(a, b)`||a != b
+`assert_almost_equal(a,b)`||round(a-b, 7) == 0
+`assert_greater(a, b)`||a > b
+`assert_greater_equal(a, b)`||a >= b
+`assert_less(a, b)`||a < b
+`assert_less_equal(a, b)`||a <= b
+
+
+### sequence(listなど)に対する判定
+
+メソッド | alias | 
+------- | ----- | --------
+`assert_in(a, b)`||a in b
+`assert_not_in(a, b)`||a not in b
+`assert_count_equal(a, b)`||a and b have the same elements in the same number, regardless of their order.
+
+### 文字列に対する判定
+
+メソッド | alias | 
+------- | ----- | --------
+`assert_regex(s, r)`||r.search(s)
+`assert_not_regex(s, r)`||not r.search(s)
+
+### 呼び出し
+以下のように必要なものだけ`import`して使っている。
+
+```
+from nose.tools import eq_
+from nose.tools import ok_
+from nose.tools import assert_in
+from nose.tools import assert_equal
+from nose.tools import assert_not_equal
+```
+
+### 他のメソッド
+利用できるメソッドは他にも色々ある。
 
 - [nose](https://nose.readthedocs.io/en/latest/)
 	- [nose.tools](https://nose.readthedocs.io/en/latest/testing_tools.html)
 	- 以下の`unittest`の関数を概ね使えるみたい。ただし，関数名は`assertEqual`を`assert_equal`と，[PEP8](https://www.python.org/dev/peps/pep-0008/#function-names)準拠に変える。
 - [unittest --- ユニットテストフレームワーク](https://docs.python.org/ja/3/library/unittest.html)
-- [numpyより](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
-- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
+- [numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
+- [math(python標準関数)](https://docs.python.org/3/library/math.html)
+	- `math.isclose()`,`math.isfinite(x)`,`math.isinf(x)`, `math.isnan(x)`
+	- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
 - [文字列中に存在する必要のない空白を削除する方法
 ](https://qiita.com/ntakuya/items/1153940f3e9c6282b4c5)
 
@@ -77,5 +138,12 @@ result=[rnd_func() for i in range(20)]
 result2=[rnd_func() for i in range(20)]
 assert_not_equal(result,result2)
 ```
-さらに，平均値や分散, max, minを使った色々な判定も可能
+さらに，平均値や分散, max, minを使った色々な判定も可能。
+ランダムに"stone","paper","scissors"を発生させるような関数なら，上記の確認後に，以下のような確認をするのも良い。
+
+```python
+assert "stone" in result
+assert "paper" in result
+assert "scissors" in result
+```
 
