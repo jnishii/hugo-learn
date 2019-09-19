@@ -74,6 +74,8 @@ from nose.tools import assert_not_equal
 	- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
 - [文字列中に存在する必要のない空白を削除する方法
 ](https://qiita.com/ntakuya/items/1153940f3e9c6282b4c5)
+- [jhamrick/plotchecker](https://github.com/jhamrick/plotchecker)
+	- matplotlibの評価
 
 ## 小技のメモ
 ### 関数中に，指定した特定の関数を使われているかを確認する
