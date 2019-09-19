@@ -186,6 +186,7 @@ $ conda create -n r -c r r-irkernel
 [jupytext](https://github.com/mwouts/jupytext)
 
 - jupyterでの保存時に，Code部分のみのファイル`somename.py`が生成される
+- Markdown部分の抽出も可能
 - 生成された`somename.py`を修正すると，ipynbファイルの方にも反映される
 
 ### Markdown と jupyter notebook形式の変換
