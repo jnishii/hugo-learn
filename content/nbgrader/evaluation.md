@@ -152,3 +152,7 @@ assert "scissors" in result
 ## 注意点
 
 -  採点対象になっている関数が，その後のセルの評価に影響するときは要注意。評価時には受講生の内容に全て置き換わるので，受講生に不適切に定義された関数がその後の評価を不適切なものにしてしまう。
+
+## 参考リンク
+
+- [jharmrick/nbgrader-demo](https://github.com/jhamrick/nbgrader-demo)
