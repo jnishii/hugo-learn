@@ -51,11 +51,11 @@ $ jupyter serverextension enable --user nbgrader.server_extensions.course_list
 
 ## 設定
 
-[Using nbgrader with JupyterHub](https://nbgrader.readthedocs.io/en/stable/configuration/jupyterhub_config.html)
+- [Using nbgrader with JupyterHub](https://nbgrader.readthedocs.io/en/stable/configuration/jupyterhub_config.html)
 
 ### スタッフ，受講生共通の設定
 
-`/etc/jupyter/nbgrader_config.py`
+- `/etc/jupyter/nbgrader_config.py`
 
 ```
 c = get_config()
@@ -73,7 +73,7 @@ c.Exchange.timezone = 'JST'
 
 ### スタッフの設定
 
-`~/.jupyter/nbgrader_config.py`
+- `~/.jupyter/nbgrader_config.py`
 
 ```
 c = get_config()
@@ -84,6 +84,5 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 
 ### コース設定
 
-`~//home/<username>/<course_name>/nbgrader_conf.py`
-
-`nbgrader quickstart <course_name>`で出力されるものをそのまま使っている。
+- `~//home/<username>/<course_name>/nbgrader_conf.py`
+	- `nbgrader quickstart <course_name>`で出力されるものをそのまま使っている。
