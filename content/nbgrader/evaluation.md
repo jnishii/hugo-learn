@@ -36,6 +36,8 @@ weight: 30
 
 
 ### sequence(listなど)に対する判定
+dictやsetの要素には順番が定義されないので，`assert_equal()`での判定は不適切。
+以下の関数を使う。
 
 メソッド | alias | 
 ------- | ----- | --------
@@ -151,8 +153,16 @@ assert "scissors" in result
 
 ## 注意点
 
--  採点対象になっている関数が，その後のセルの評価に影響するときは要注意。評価時には受講生の内容に全て置き換わるので，受講生に不適切に定義された関数がその後の評価を不適切なものにしてしまう。
+採点対象になっている関数が，その後のセルの評価に影響するときは要注意。評価時には受講生の内容に全て置き換わるので，受講生に不適切に定義された関数がその後の評価を不適切なものにしてしまうことがある。
 
-## 参考リンク
+## おまけ
 
 - [jharmrick/nbgrader-demo](https://github.com/jhamrick/nbgrader-demo)
+	- jupyter notebook/nbgraderを使うための，学生ガイダンス用notebookなどがある。
+- [bootstrap-theme.css](https://github.com/jupyter/nbgrader/blob/master/nbgrader/server_extensions/formgrader/static/components/bootstrap/css/bootstrap-theme.css)
+	- nbgraderのcss
+	- 以下の[alert class](https://getbootstrap.com/docs/4.0/components/alerts/)を使うと，Markdownセルの背景に色を付けることもできる。
+		- `<div class="alert alert-success">`緑色
+		- `<div class="alert alert-info">` 青色
+		- `<div class="alert alert-warning">` 黄色
+		- `<div class="alert alert-danger">` 赤色
