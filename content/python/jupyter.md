@@ -131,6 +131,10 @@ $ pip install jupyter-emacskeys
 
 ## Tips
 
+### Short Cut Key
+コマンドモード(ESCを押す)で”h”を押すと一覧表示される
+
+
 ### 特定のセルを除いたシートを作る
 
 1. 除きたいセルにタグ(例えば，`remove_cell`)をつける。タグは，View/Cell Toolbar/Tagsで入力可能に。
@@ -147,9 +151,6 @@ TagRemovePreprocessor.remove_all_outputs_tags
 ```
 
 - 情報源: [How to hide one specific cell (input or output) in IPython Notebook?](https://stackoverflow.com/questions/31517194/how-to-hide-one-specific-cell-input-or-output-in-ipython-notebook)
-
-### Short Cut Key
-コマンドモード(ESCを押す)で”h”を押すと一覧表示される
 
 
 ### Rを Jupyter Notebookで使えるようにする
@@ -179,6 +180,14 @@ $ R
 $ conda create -n r -c r r-irkernel
 ```
 -->
+
+### jupyter上でCodeの自動抽出
+
+[jupytext](https://github.com/mwouts/jupytext)
+
+- jupyterでの保存時に，Code部分のみのファイル`somename.py`が生成される
+- Markdown部分の抽出も可能
+- 生成された`somename.py`を修正すると，ipynbファイルの方にも反映される
 
 ### Markdown と jupyter notebook形式の変換
 

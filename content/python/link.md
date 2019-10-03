@@ -24,9 +24,11 @@ title: リンク集
 ### その他のクラウドサービス
 
 - [coding ground](https://www.tutorialspoint.com/codingground.htm)
+  - 75以上のプログラミング言語を使えるサイト
 - [binder](https://mybinder.org/)
   - GitHubにおいたjupyter notebookを公開するための環境
 - [CoCalc](https://cocalc.com/)
+  - jupyterやLaTeX，Linux端末を使えるサイト。
 
 ## お勉強資料
 
@@ -64,6 +66,8 @@ title: リンク集
 	- [jupyter形式のシート](https://github.com/ipython-books/cookbook-2nd-code)もある
 - [Elegant Scipy](https://github.com/elegant-scipy/elegant-scipy)
 	- [jupyter形式のシート](https://mybinder.org/v2/gh/elegant-scipy/notebooks/master?filepath=index.ipynb)
+- [Introduction to Data Science: A Python Approach to Concepts, Techniques and Applications](https://github.com/DataScienceUB/introduction-datascience-python-book)
+	- [書籍](https://www.springer.com/gp/book/9783319500164)の参考プログラム集。グラフ作成例が豊富。
 
 ### オンラインのお勉強サイト
 
@@ -71,10 +75,6 @@ title: リンク集
   - Python入門からディープラーニングまでいろいろなコースがある。
 - [プログラミングで彼女を作る](https://paiza.jp/poh/ando/)
   - [よく似たのが他にもいろいろ](https://paiza.jp/paiza_game_history)
-- [CodeIQ](https://codeiq.jp/)
-  - 「プログラミングで問いて遊んでクセになる」というリクルートのサイト
-  - スキルにマッチした企業からスカウトを受けれるらしい
-  - pythonの課題はあまりないけど...(2018/2)
 - [CodinGame](https://www.codingame.com/start)
 - [Codecademy: Learn Python](https://www.codecademy.com/courses/learn-python/)
 - [Python Tutor](http://www.pythontutor.com/)
