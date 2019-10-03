@@ -231,8 +231,15 @@ $ jupyter nbconvert <file name>.ipynb --to slides --post serve
 プレゼン上でプログラムの実行もできる。
 	- どのセルをスライドにするかは，方法1と同様にして選択できる。
 	- カスタマイズ方法は[Customizing RISE](https://github.com/damianavila/RISE/blob/master/doc/customize.md)にある。
-		- 例えば，コンテンツがページからはみ出るときには，[scroll bar](https://github.com/damianavila/RISE/blob/master/doc/customize.md#enable-a-right-scroll-bar)をつけれる
-		- メタデータの編集方法は[ここ](https://github.com/damianavila/RISE/blob/master/doc/customize.md#notebook-metadata)にある。
+	- メタデータの編集方法は[ここ](https://github.com/damianavila/RISE/blob/master/doc/customize.md#notebook-metadata)にある。
+		- 例えば，コンテンツがページからはみ出るときには，[scroll bar](https://github.com/damianavila/RISE/blob/master/doc/customize.md#enable-a-right-scroll-bar)をつけられる。
+	- 以下はカスタマイズ例。"Edit→Edit Notebook Metadata"を選択して，以下を追加。
+		```
+  "rise": {
+    "scroll": true,
+    "enable_chalkboard": true
+	}
+		```
 - 方法3: [nbpresent](https://github.com/Anaconda-Platform/nbpresent)を使う。
 スライド作成のいろいろな機能がある。
 ```
