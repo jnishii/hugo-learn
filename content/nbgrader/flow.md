@@ -109,6 +109,12 @@ autograded/{student_id}/{assignment_id}/{notebook_id}.ipynb
 人力採点が必要なら自動採点後に。Formgrader上でもできる。
 
 
+〆切遅れに対して，ペナルティを設けることもできる([Late submission plugin](https://nbgrader.readthedocs.io/en/stable/plugins/late-plugin.html))。
+
+- 1日につき1点減点などの設定可能。この場合，提出シートが3シートならば，それぞれに対して1点減点になる。ただし，0点が下限。
+
+
+
 ### フィードバック
 
 #### フィードバック用htmlの生成
