@@ -66,3 +66,7 @@ register(
 環境名(id)は自由に変えられる。上記の場合は`FrozenLakeNotSlippery-v0`
 
 参考URL: [Setting is_slippery=False in FrozenLake-v0](https://github.com/openai/gym/issues/565)
+
+## リンク
+
+- [The Pac-Man Projects](http://ai.berkeley.edu/project_overview.html)
