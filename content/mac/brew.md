@@ -46,6 +46,8 @@ $ brew install unar
 $ brew install ffmpeg
 $ brew install kryptco/tap/kr
 $ brew install xonsh bash-completion2
+$ brew install fish
+$ brew install z
 ```
 
 ## homebrew-caskを使えるようにする
