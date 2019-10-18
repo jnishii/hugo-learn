@@ -71,6 +71,7 @@ from nose.tools import assert_not_equal
 	- 以下の`unittest`の関数を概ね使えるみたい。ただし，関数名は`assertEqual`を`assert_equal`と，[PEP8](https://www.python.org/dev/peps/pep-0008/#function-names)準拠に変える。
 - [unittest --- ユニットテストフレームワーク](https://docs.python.org/ja/3/library/unittest.html)
 - [numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
+	- numpy.testingには`assert_array_not_equal`など，`not`に対する判定ルーチンがない。必要な時には`numpy.testing.assert_raises`を使う。([情報源](https://stackoverflow.com/questions/38506044/numpy-testing-assert-array-not-equal))
 - [math(python標準関数)](https://docs.python.org/3/library/math.html)
 	- `math.isclose()`,`math.isfinite(x)`,`math.isinf(x)`, `math.isnan(x)`
 	- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))
