@@ -9,7 +9,7 @@ weight: 20
 [Creating a new assignment](https://nbgrader.readthedocs.io/en/stable/user_guide/creating_and_grading_assignments.html#creating-a-new-assignment)
 
 - Formgrader: "Add new assignment..."をクリック
-- コマンド: `nbgrader db assignment add` ソースの置き場所は以下。
+- コマンド: `nbgrader db assignment add` ソースは以下に配置される。
 ```
 {course_directory}/source/{assignment_id}/{notebook_id}.ipynb
 ```
@@ -109,6 +109,12 @@ autograded/{student_id}/{assignment_id}/{notebook_id}.ipynb
 人力採点が必要なら自動採点後に。Formgrader上でもできる。
 
 
+〆切遅れに対して，ペナルティを設けることもできる([Late submission plugin](https://nbgrader.readthedocs.io/en/stable/plugins/late-plugin.html))。
+
+- 1日につき1点減点などの設定可能。この場合，提出シートが3シートならば，それぞれに対して1点減点になる。ただし，0点が下限。
+
+
+
 ### フィードバック
 
 #### フィードバック用htmlの生成
@@ -120,7 +126,6 @@ autograded/{student_id}/{assignment_id}/{notebook_id}.ipynb
 
 ```
 feedback/{student_id}/{assignment_id}/{notebook_id}.html
-
 ```
 
 #### リリース
@@ -134,3 +139,26 @@ csvファイルを生成できる。
 
 - `nbgrader export`
 
+## 課題の再リリース
+
+提出された課題(assignment) の回収をすると，その後は修正した課題シートを再リリースすることはできなくなる。
+再リリースするには，まずunreleaseする。
+```
+nbgrader list --remove <assignment_name>
+```
+
+課題をデータベースからも消去したい場合
+```
+nbgrader db assignment remove <assignment_name>
+```
+
+回収済みの提出物等も消去する場合は，以下を実行する。
+
+```
+1. Delete the release directory (rm -r release/<assignment_name>)
+2. Delete any submissions of it (rm -r submitted/*/<assignment_name>)
+3. Delete any autograded versions of it (rm -r autograded/*/<assignment_name>)
+4. Delete any feedback of it (rm -r feedback/*/<assignment_name>)
+```
+
+- [参考) Released assignments are still there after nbgrader db assignment remove](https://github.com/jupyter/nbgrader/issues/995)

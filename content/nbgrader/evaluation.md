@@ -80,7 +80,7 @@ from nose.tools import assert_not_equal
 	- matplotlibの評価
 
 ## 小技のメモ
-### 関数中に，指定した特定の関数を使われているかを確認する
+### 関数中に，指定した特定の関数が使われているかを確認する
 
 - 方法1: [Checking whether a specific function has been used](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
 	- 組み込み関数が利用されているか確認する場合，この方法ではエラーが出る
