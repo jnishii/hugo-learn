@@ -14,7 +14,46 @@ weight: 10
 
 ## インストール
 
+### nbgraderのインストール
+
 - [インストール方法](https://nbgrader.readthedocs.io/en/stable/user_guide/installation.html)
+
+### nbgraderの有効化(マルチユーザ環境)
+
+jupyterhubを使ったマルチユーザ環境(受講生も利用)でのおすすめ設定。
+
+とりあえずすべての機能を有効化
+
+```
+# jupyter nbextension install --sys-prefix --py nbgrader --overwrite
+# jupyter nbextension enable --sys-prefix --py nbgrader
+# jupyter serverextension enable --sys-prefix --py nbgrader
+```
+
+受講生に対しては課題作成・管理機能は無効にしておく(課題取得や提出機能は有効に)。
+nbgraderで用意するのがシングルコースのみなら，コースリストも無効に。
+
+```
+# jupyter nbextension disable --sys-prefix create_assignment/main
+# jupyter nbextension disable --sys-prefix formgrader/main --section=tree
+# jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
+# jupyter nbextension disable --sys-prefix course_list/main --section=tree
+# jupyter serverextension disable --sys-prefix nbgrader.server_extensions.course_list
+
+```
+
+インストラクタは以下のシングルユーザ環境と同様に，各種機能を有効にしておく。
+
+### nbgraderの有効化(シングルユーザ環境)
+
+インストラクタのみがnbgraderを使う場合
+
+```
+$ jupyter nbextension install --user --py nbgrader --overwrite
+$ jupyter nbextension enable --user --py nbgrader
+$ jupyter serverextension enable --user --py nbgrader
+```
+
 
 ## 試してみる
 
