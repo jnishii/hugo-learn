@@ -44,6 +44,15 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 
 ## おまけ
 
+### nbgitpuller
+
+受講生がjupyterにログインした時に，git pullを簡単に実行させるためのjupyter plugin.
+
+- [jupyterhub/nbgitpuller](https://github.com/jupyterhub/nbgitpuller)
+
+
+
+### cull_idle
 jupyterhubにログインしたままコマンド実行がないプロセスは止めるための設定。`/etc/jupyterhub/jupyterhub.conf`に以下を追記しておく。
 
 ```python

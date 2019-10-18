@@ -33,12 +33,19 @@ weight: 2
 - unar: ファイル名が文字化けしない解凍ソフト
 - [ffmpeg](https://www.ffmpeg.org/): ビデオやオーディオファイルをいろいろな形式に変換したりできるソフト
 - [Krypton app](https://krypt.co/docs/start/installation.html)
+- [xonsh](https://xon.sh/index.html): Pythonをコマンドラインで使えるシェル
+- [fish](https://fishshell.com/): 軽くて高機能なシェル
+	- `fish_config`: ブラウザでカスタマイズ
+	- `fish_update_completions`: 補完情報の更新
+- z: cdコマンドの拡張版
+
 ```
 $ brew install lv gnupg nkf rmtrash
 $ brew install pandoc markdown
 $ brew install unar
 $ brew install ffmpeg
 $ brew install kryptco/tap/kr
+$ brew install xonsh bash-completion2
 ```
 
 ## homebrew-caskを使えるようにする
