@@ -3,52 +3,6 @@ title: jupyterhubとの連携
 weight: 40
 ---
 
-jupyterhub上でnbgraderを使うときの設定例。
-1コース，1教員の単純な設定です。
-
-## nbgraderのインストール
-
-- [Installation](https://nbgrader.readthedocs.io/en/stable/user_guide/installation.html)
-
-```
-# conda install jupyter
-# conda install -c conda-forge nbgrader
-```
-
-```
-# jupyter nbextension install --sys-prefix --py nbgrader --overwrite
-# jupyter nbextension enable --sys-prefix --py nbgrader
-# jupyter serverextension enable --sys-prefix --py nbgrader
-```
-
-### 受講生は不要なものを無効に
-
-- 課題作成メニュー
-
-```
-# jupyter nbextension disable --sys-prefix create_assignment/main
-```
-- Formgraderタブ
-```
-# jupyter nbextension disable --sys-prefix formgrader/main --section=tree
-# jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
-```
-- コースリスト(1コース(科目)のみの場合)
-```
-# jupyter nbextension disable --sys-prefix course_list/main --section=tree
-# jupyter serverextension disable --sys-prefix nbgrader.server_extensions.course_list
-```
-
-### スタッフは上記を有効に
-
-```
-$ jupyter nbextension enable --user create_assignment/main
-$ jupyter nbextension enable --user formgrader/main --section=tree
-$ jupyter serverextension enable --user nbgrader.server_extensions.formgrader
-$ jupyter nbextension enable --user course_list/main --section=tree
-$ jupyter serverextension enable --user nbgrader.server_extensions.course_list
-```
-
 ## 設定
 
 - [Using nbgrader with JupyterHub](https://nbgrader.readthedocs.io/en/stable/configuration/jupyterhub_config.html)
@@ -86,3 +40,22 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 
 - `~//home/<username>/<course_name>/nbgrader_conf.py`
 	- `nbgrader quickstart <course_name>`で出力されるものをそのまま使っている。
+
+
+## おまけ
+
+jupyterhubにログインしたままコマンド実行がないプロセスは止めるための設定。`/etc/jupyterhub/jupyterhub.conf`に以下を追記しておく。
+
+```python
+# cull_idle
+c.JupyterHub.services = [
+    {
+        'name': 'cull_idle',
+        'admin': True,
+#        'command': ['/home/adm/jupyterhub/cull_idle_servers.py'],
+        'command': '/usr/local/anaconda3/bin/python3 <write path here>/cull_idle_servers.py --timeout=7200'.split(),
+    }
+]
+```
+
+実行コマンド[cull_idle_servers.py](https://github.com/jupyterhub/jupyterhub/blob/master/examples/cull-idle/cull_idle_servers.py)を，上記で指定するパスにおいておく。
