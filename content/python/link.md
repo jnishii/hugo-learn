@@ -82,6 +82,7 @@ title: リンク集
 
 ## モジュール情報
 
+- [Awesome Python Science Stack](https://github.com/bakfoo/awesome-pysci)
 - [Scipy Lecture Notes](http://www.turbare.net/transl/scipy-lecture-notes/index.html)
 - [Play and Record Sound with Python](https://python-sounddevice.readthedocs.io/)
 
