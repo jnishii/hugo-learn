@@ -264,10 +264,13 @@ conda install -c conda-forge nbpresent
 
 [Jupyter Notebook Ctrl+Shift+- (splitting cell) does not work](https://stackoverflow.com/questions/49485753/jupyter-notebook-ctrlshift-splitting-cell-does-not-work)
 
-## jupyterのファイルのビューア
+## いろいろ
 
-- [nbviewer-app](https://github.com/tuxu/nbviewer-app)
+
+
+- [nbviewer-app](https://github.com/tuxu/nbviewer-app): jupyterのファイルのビューア
 ```
 $ brew cask install jupyter-notebook-viewer
 ```
-
+- [shoprunner/jupyter-notify](https://github.com/shoprunner/jupyter-notify): jupyterのセル入力に対してブラウザに完了シグナルを送る。
+- [sjpfenninger/ipython-extensions](https://github.com/sjpfenninger/ipython-extensions): jupyter kernelがidleになったのを検出。待ち時間が長いジョブを走らせるときに便利。

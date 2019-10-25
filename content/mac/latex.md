@@ -15,9 +15,10 @@ $ export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/:$PATH
 TeXまわりのアップデート
 ```
 $ sudo tlmgr update --self --all
+$ sudo tlmgr paper a4
 ```
 
-### 設定(Mojaveの場合)
+### 設定(Catalina,Mojaveの場合)
 
 情報源: [macOS Mojave / macOS High Sierra / macOS Sierra / OS X El Capitan に付属するヒラギノフォントのセットアップ](https://texwiki.texjp.org/?%E3%83%92%E3%83%A9%E3%82%AE%E3%83%8E%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88#macos-hiragino-setup)
 
@@ -34,7 +35,7 @@ $ sudo cjk-gs-integrate --link-texmf --cleanup
 3. [cjk-gs-integrate-macos.pl](https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate-macos.pl) をダウンロード
 4. 実行
 ```
-$ sudo perl cjk-gs-integrate-macos.pl --link-texmf
+$ sudo cjk-gs-integrate-macos --link-texmf
 $ sudo mktexlsr
 $ sudo kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron
 ```

@@ -155,6 +155,11 @@ Python 3.6.5 :: Anaconda 5.2.0 (x86_64)
 $ conda install -c menpo opencv
 ```
 -->
+- [dfply](https://github.com/kieferk/dfply) : Rのdplyrと同様のデータフレーム操作をパイプで行えるようにするモジュール
+```
+pip install dfply
+```
+	- [dplyr使いのためのpandas dfplyすごい編](https://qiita.com/T_Shinomiya/items/c039451869382e0790f4)
 - OpenCV3
 ```
 $ conda install opencv
