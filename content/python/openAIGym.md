@@ -52,8 +52,17 @@ idの名前を変えれば，仮に違う名前の環境として定義できる
 
 #### Q. FrozenLakeが滑り過ぎで困る。滑らない環境にしたい。
 
-A. 以下のような設定を加える。
+**方法1**
+
+以下のように引数`is_sleppery`を使って，決定論的状態遷移に変更できる。
+```python
+env = gym.make("FrozenLake-v0", is_slippery=False)
 ```
+
+**方法2**
+
+以下のような設定を加える。ついでに，他のパラメータ設定もできる。
+```python
 from gym.envs.registration import register
 register(
     id='FrozenLakeNotSlippery-v0',
@@ -66,7 +75,3 @@ register(
 環境名(id)は自由に変えられる。上記の場合は`FrozenLakeNotSlippery-v0`
 
 参考URL: [Setting is_slippery=False in FrozenLake-v0](https://github.com/openai/gym/issues/565)
-
-## リンク
-
-- [The Pac-Man Projects](http://ai.berkeley.edu/project_overview.html)
