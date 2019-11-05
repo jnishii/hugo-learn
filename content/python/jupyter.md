@@ -223,6 +223,9 @@ jupyter notebook形式でテキストを作ったとき，テキストセルで�
 
 - [nb_clear_codeblock.py](https://gist.github.com/jnishii/555c87a2219d35fb3f082e1e3a13c51e)
 
+### コード実行にスライドバーを利用したい
+- [ipywidgets](https://ipywidgets.readthedocs.io/en/latest/)
+	- [voida](https://github.com/voila-dashboards/voila)で，web化もできる
 
 ### スライド対応にする
 
