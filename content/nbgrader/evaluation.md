@@ -45,6 +45,8 @@ dictやsetの要素には順番が定義されないので，`assert_equal()`で
 `assert_not_in(a, b)`||a not in b
 `assert_count_equal(a, b)`||a and b have the same elements in the same number, regardless of their order.
 
+なお，リスト同士(list,np.array同士も含む)の比較には，[numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)の`nt.assert_array_equal`を使うと良い。
+
 ### 文字列に対する判定
 
 メソッド | alias | 
