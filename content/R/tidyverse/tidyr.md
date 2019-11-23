@@ -1,5 +1,5 @@
 ---
-title: tidyr (整然データ)
+title: tidyr (データ生成)
 weight: 30
 ---
 
