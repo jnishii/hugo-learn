@@ -4,7 +4,7 @@ weight: 20
 ---
 
 パイプ処理用パッケージ[magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html)。tidyverseの処理をパイプライン化して見やすくできる。
-中毒になる可能性あり(やめられない，あらゆるパイプにしたくなる等)。
+中毒性あり(あらゆるパイプにしたくなる等)なので要注意。
 
 ## 情報源
 - [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html)
@@ -16,7 +16,9 @@ weight: 20
 install.packages("magrittr")
 ```
 
-## パイプ演算子`%>%`
+## いろいろなパイプ処理
+
+### パイプ演算子`%>%`
 
 UNIXのパイプ`|`と同様の機能。以下の2文はそれぞれ同じ意味になる。
 (ほとんどが[Package `magittr'より](https://cran.r-project.org/web/packages/magrittr/magrittr.pdf)にある例)
@@ -52,13 +54,13 @@ data %>% (function(x)){
 })
 ```
 
-### 要注意の例
+#### 要注意の例
 ```
 data <- df1 + df2 %>% as_tibble() # df2のみがパイプ処理される
 data <- (df1 + df2) %>% as_tibble() # df1+df2の結果がパイプ処理される
 ```
 
-### 列名の付け替えに使う方法
+#### 列名の付け替えに使う方法
 
 ```
 df <- df1+df2
@@ -73,7 +75,7 @@ df <- (df1+df2) %>%
 
 
 
-## パイプ演算子`%<>%`
+### パイプ演算子`%<>%`
 ```
 library(magrittr)
 ```
@@ -84,7 +86,7 @@ x <- x %>% f()
 x <- f(x)
 ```
 
-## Tee演算子`%T>%`
+### Tee演算子`%T>%`
 ```
 library(magrittr)
 ```
@@ -94,8 +96,28 @@ data %>% f() %T>% print() %>% g()
 ```
 もし上の例で`%T>%`の代わりに`%>%`を使うと `print()`の出力が`g()`に渡されて，おかしなことになる。
 
-## Dollar演算子 `%$%`
+### Dollar演算子 `%$%`
 データフレームの変数にアクセスする。
 ```
 data %$% ggplot(data=., aex(x=time,y=temperature))+geom_point()
+```
+
+## magrittrの関数
+
+tibbleの要素全部をまとめて2倍(`multiply_by()`)するとか1を引く(`subtract()`)とかといった処理のための関数がいろいろある。
+一覧は以下で見れる。
+```
+ls("package:magrittr") %>% print()
+ [1] "%<>%"                   "%>%"                    "%$%"                   
+ [4] "%T>%"                   "add"                    "and"                   
+ [7] "debug_fseq"             "debug_pipe"             "divide_by"             
+[10] "divide_by_int"          "equals"                 "extract"               
+[13] "extract2"               "freduce"                "functions"             
+[16] "inset"                  "inset2"                 "is_greater_than"       
+[19] "is_in"                  "is_less_than"           "is_weakly_greater_than"
+[22] "is_weakly_less_than"    "mod"                    "multiply_by"           
+[25] "multiply_by_matrix"     "n'est pas"              "not"                   
+[28] "or"                     "raise_to_power"         "set_colnames"          
+[31] "set_names"              "set_rownames"           "subtract"              
+[34] "undebug_fseq"           "use_series"
 ```

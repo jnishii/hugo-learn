@@ -196,7 +196,7 @@ $ conda create -n r -c r r-irkernel
 ### LaTeXコマンド
 
 - Markdownセルで`$$`で囲めばOK
-- nbextensionsで [LaTeX environments for Jupyte](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/latex_envs/README.html)を有効にすると，LaTeX用shortcutをいろいろ使える
+- nbextensionsで [LaTeX environments for Jupyter](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/latex_envs/README.html)を有効にすると，LaTeX用shortcutをいろいろ使える
 
 ### 英文コンテンツを日本語翻訳する
 

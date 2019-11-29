@@ -83,7 +83,7 @@ library(tidyverse)
 	```
 
 ## いろいろな関数
-### `nest`, `unnest`: データフレームの階層化
+### データフレームの階層化
 
 - **[nest()](https://tidyr.tidyverse.org/reference/nest.html)**: データフレームを階層化
 	```
@@ -92,14 +92,14 @@ library(tidyverse)
 - **[unnest()](https://tidyr.tidyverse.org/reference/unnest.html)**: 階層化したデータフレームをもどす
 
 
-### `bind_rows`, `bind_cols`: 列や行の追加
+### 列や行の追加
 
 同じ列幅や行数の2つのデータフレームを結合させるときには[bind_rows()](https://dplyr.tidyverse.org/reference/bind.html)や[bind_cols()](https://dplyr.tidyverse.org/reference/bind.html)を使う。
 `rbind()`や`cbind()`のデータフレーム用関数。
 
 
 
-### `join`: tibbleの結合
+### tibbleの結合
 
 キーとなる列情報を使って2のtibbleを結合するには[full_join()](https://dplyr.tidyverse.org/reference/join.html)とか，[right_joint()](https://dplyr.tidyverse.org/reference/join.html)とかを使う。データベース関数のjoinと同じようなもの。
 

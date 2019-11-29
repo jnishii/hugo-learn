@@ -35,9 +35,10 @@ weight: 30
 `assert_less_equal(a, b)`||a <= b
 
 
-### sequence(listなど)に対する判定
+### sequence(setなど)に対する判定
+
 setの要素には順番が定義されないので，`assert_equal()`での判定は不適切。
-以下の関数を使う。
+例えば以下の関数がある。
 
 メソッド | alias | 
 ------- | ----- | --------
@@ -45,12 +46,19 @@ setの要素には順番が定義されないので，`assert_equal()`での判�
 `assert_not_in(a, b)`||a not in b
 `assert_count_equal(a, b)`||a and b have the same elements in the same number, regardless of their order.
 
+
+### リストに対する判定
+
+リスト同士(list,np.array同士も含む)の比較には，[numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)の`nt.assert_array_equal`を使うと良い。
+
 ### dictに対する判定
+
 [Python unittest - asserting dictionary with lists](https://stackoverflow.com/questions/14491164/python-unittest-asserting-dictionary-with-lists)にのっている以下の方法を使う。dictの要素がいろいろな形式のものに対応できる。
 ```
 assert all( (k,v) in source_dict.items()
             for (k,v) in dest_dict.items() )
 ```
+
 
 ### 文字列に対する判定
 
