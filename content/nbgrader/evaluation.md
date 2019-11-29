@@ -36,7 +36,7 @@ weight: 30
 
 
 ### sequence(listなど)に対する判定
-dictやsetの要素には順番が定義されないので，`assert_equal()`での判定は不適切。
+setの要素には順番が定義されないので，`assert_equal()`での判定は不適切。
 以下の関数を使う。
 
 メソッド | alias | 
@@ -44,6 +44,13 @@ dictやsetの要素には順番が定義されないので，`assert_equal()`で
 `assert_in(a, b)`||a in b
 `assert_not_in(a, b)`||a not in b
 `assert_count_equal(a, b)`||a and b have the same elements in the same number, regardless of their order.
+
+### dictに対する判定
+[Python unittest - asserting dictionary with lists](https://stackoverflow.com/questions/14491164/python-unittest-asserting-dictionary-with-lists)にのっている以下の方法を使う。dictの要素がいろいろな形式のものに対応できる。
+```
+assert all( (k,v) in source_dict.items()
+            for (k,v) in dest_dict.items() )
+```
 
 ### 文字列に対する判定
 
