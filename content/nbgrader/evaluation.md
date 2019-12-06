@@ -182,3 +182,12 @@ assert "scissors" in result
 		- `<div class="alert alert-info">` 青色
 		- `<div class="alert alert-warning">` 黄色
 		- `<div class="alert alert-danger">` 赤色
+- 自動採点のとき，はjupyter notebookの実行は途中のセルまでで停止したいとき
+	- [IPython Notebook - early exit from cell](https://stackoverflow.com/questions/24005221/ipython-notebook-early-exit-from-cell)
+```
+class StopExecution(Exception):
+    def _render_traceback_(self):
+        pass
+
+raise StopExecution
+```
