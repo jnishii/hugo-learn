@@ -55,7 +55,7 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 ### cull_idle
 jupyterhubにログインしたままコマンド実行がないプロセスは止めるための設定。`/etc/jupyterhub/jupyterhub.conf`に以下を追記しておく。
 
-```python
+```
 # cull_idle
 c.JupyterHub.services = [
     {

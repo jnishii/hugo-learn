@@ -104,7 +104,7 @@ from nose.tools import assert_not_equal
 
 以下は，`unittest`の`patch`を利用して，関数`show_list`に`enumerate()`が利用されているかを確認する例。`some_args`と`some_args_for_enumerate`は，`show_list()`および，`show_list`内の`enumerate()`に渡される引数。
 
-```python
+```
 from unittest.mock import patch
 with patch('__main__.enumerate') as mock_enumerate:
     show_list(some_args)
@@ -118,7 +118,7 @@ mock_enumerate.assert_called_once_with(some_args_for_enumerate)
 	- [mockオブジェクトを使う](https://nbgrader.readthedocs.io/en/stable/user_guide/autograding_resources.html#checking-how-functions-were-called-or-not-called-with-mocking)
 2. `print`文`が複数回実行される場合([参考](https://stackoverflow.com/questions/2654834/capturing-stdout-within-the-same-process-in-python/3113913#3113913))
 
-```python
+```
 import sys, io, contextlib
 
 class Data(object):
@@ -138,7 +138,7 @@ def capture_stdout():
 ```
 ここまでが宣言部分。以下が利用方法。
 
-```python
+```
 with capture_stdout() as capture:
 	print("hello")   # ここに，監視する関数を列挙する。
 	print("goodbye")
@@ -153,7 +153,7 @@ assert res.replace(" ","").strip()==ans.replace(" ","").strip() # usually better
 
 関数の返り値が乱数を使って生成される場合，正解か否かの判定は難しいことも多いが，少なくとも乱数で生成されているかどうかの確認は簡単にできる。
 
-```python
+```
 result=[rnd_func() for i in range(20)]
 result2=[rnd_func() for i in range(20)]
 assert_not_equal(result,result2)
@@ -161,7 +161,7 @@ assert_not_equal(result,result2)
 さらに，平均値や分散, max, minを使った色々な判定も可能。
 ランダムに"stone","paper","scissors"を発生させるような関数なら，上記の確認後に，以下のような確認をするのも良い。
 
-```python
+```
 assert "stone" in result
 assert "paper" in result
 assert "scissors" in result
@@ -182,8 +182,10 @@ assert "scissors" in result
 		- `<div class="alert alert-info">` 青色
 		- `<div class="alert alert-warning">` 黄色
 		- `<div class="alert alert-danger">` 赤色
-- 自動採点のとき，はjupyter notebookの実行は途中のセルまでで停止したいとき
+- 自動採点のときにjupyter notebookの実行は途中のセルまでで停止したいとき
+	- 以下の方法を使えるかと思ったら，自動採点時にエラーが出てしまう。いい方法はまだ知らない。
 	- [IPython Notebook - early exit from cell](https://stackoverflow.com/questions/24005221/ipython-notebook-early-exit-from-cell)
+
 ```
 class StopExecution(Exception):
     def _render_traceback_(self):
