@@ -183,13 +183,15 @@ assert "scissors" in result
 		- `<div class="alert alert-warning">` 黄色
 		- `<div class="alert alert-danger">` 赤色
 - 自動採点のときにjupyter notebookの実行は途中のセルまでで停止したいとき
-	- 以下の方法を使えるかと思ったら，自動採点時にエラーが出てしまう。いい方法はまだ知らない。
-	- [IPython Notebook - early exit from cell](https://stackoverflow.com/questions/24005221/ipython-notebook-early-exit-from-cell)
-
-```
-class StopExecution(Exception):
-    def _render_traceback_(self):
+	- 停止したいセルに以下を入力([情報源](https://stackoverflow.com/questions/40554446/how-to-stop-execution-of-all-cells-in-jupyter-notebook))
+	```
+raise SystemExit("Stop right here!")
+	```
+	- [以下の方法]((https://stackoverflow.com/questions/24005221/ipython-notebook-early-exit-from-cell))も使えるかと思ったら，自動採点時にエラーが出てしまった。
+	```
+	class StopExecution(Exception):
+	    def _render_traceback_(self):
         pass
 
-raise StopExecution
-```
+	raise StopExecution
+	```
