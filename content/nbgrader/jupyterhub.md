@@ -48,7 +48,7 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 
 - `/etc/nbgrader_config.py`に各コース用ホームディレクトリ(担当教員のホーム'/home/<username>/`等)を指定。
 	- 各コースに対して異なるポートを割り振る
-	- 各コースに対するユーザ指定(whitelist)設定をする。(ユーザ追加毎にjupyterhubの再起動が必要なのが厄介)
+	- 各コースに対するユーザ指定(whitelist)設定をする。
 - 各コース用ホームディレクトリに`~/.jupyter/nbgrader_conf.py`を置いて，課題用ルートフォルダ('/home/<username>/<course_name>')を指定
 
 - `/etc/nbgrader_config.py`もしくは，**学生**の`~/.jupyter/nbgrader_config.py`に以下を追記
@@ -58,10 +58,32 @@ c = get_config()
 c.Exchange.path_includes_course = True
 c.Authenticator.plugin_class = JupyterHubAuthPlugin
 ```
-- コース用ディレクトリに'/home/<username>/<course_name>/nbgrader_config.py'を準備(1コースの場合と同じ)
+- コース用ディレクトリに`/home/<username>/<course_name>/nbgrader_config.py`を準備(1コースの場合と同じ)
 - 詳細はこちら: [Example Use Case: Multiple Classes](https://nbgrader.readthedocs.io/en/latest/configuration/jupyterhub_config.html#example-use-case-multiple-classes)を参照
 
 
+## アクセス制限
+
+各コースに対するユーザ登録(whitelist作成)も可能。ただし，jupyterhubの再起動が必要。
+
+**[問題点]**
+
+jupyterhubとjupyter notebookが同じサーバ上にあると，jupyterhubの再起動時にログインユーザが追い出されてしまい，再ログインが必要になる。
+
+- [情報源](https://github.com/jupyterhub/jupyterhub/issues/2541)
+
+**[解決法その1]**
+
+proxyサーバを介したアクセスとし，以下の設定をしておく。
+
+```
+Proxy.should_start=False
+JupyterHub.cleanup_servers=False
+```
+
+**[解決法その2]**
+
+jupyterhubとjupyter notebookは別のサーバ(コンテナ)で起動する。
 
 ## おまけ
 
