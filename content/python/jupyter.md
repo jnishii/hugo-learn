@@ -260,6 +260,43 @@ conda install -c conda-forge nbpresent
 - 方法4: GitHubにJupyter notebookをおくと，[Jupyter Notebook Viewer](http://nbviewer.jupyter.org)で表示できる。プレゼン形式にも出来る。
 
 
+## pdfを出力できるようにする
+
+XeLaTeXをインスールしておくこと。
+
+**方法1:**
+texに変換してからpdfにする
+```
+jupyter nbconvert --to latex notebook_name.ipynb
+```
+
+**方法2:** 
+jupyterのメニューからpdfを出力したいときは，`/usr/local/anaconda3/lib/python3.6/site-packages/nbconvert/templates/latex/base.tplx`を修正。
+
+```
+--- base.tplx.org   2019-12-20 11:30:09.881902845 +0900
++++ base.tplx   2019-12-20 11:32:55.112929136 +0900
+@@ -21,6 +21,10 @@
+     \else
+        \usepackage{fontspec}
+     \fi
++    \usepackage{xeCJK}
++    \setCJKmainfont[BoldFont=IPAexGothic]{IPAexMincho}
++    \setCJKsansfont{IPAexGothic}
++    \setCJKmonofont{IPAGothic}
+
+     % Basic figure setup, for now with no caption control since it's done
+     % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+```
+
+**問題点**
+
+Markdownに`!()[]`を使って埋め込んだ画像は出力されるが，htmlタグ`"<img src="images/imagefile.png">`で埋め込んだ画像は消えてなくなる。画像サイズを変えるにはhtmlタグを使わないといけないので困る。
+
+- **解決法1**: notebookをmarkdown形式にして，markdownのビューア等でpdfにする
+- **解決法2**: htmlタグをlatexコマンドに変える前処理をしてから変換する。
+
+
 ## トラブル
 ### Q. セルの分割(Ctr-shift-"minus")を実行できない
 日本語キーボードの問題らしい。
@@ -268,7 +305,6 @@ conda install -c conda-forge nbpresent
 [Jupyter Notebook Ctrl+Shift+- (splitting cell) does not work](https://stackoverflow.com/questions/49485753/jupyter-notebook-ctrlshift-splitting-cell-does-not-work)
 
 ## いろいろ
-
 
 
 - [nbviewer-app](https://github.com/tuxu/nbviewer-app): jupyterのファイルのビューア
