@@ -260,7 +260,23 @@ conda install -c conda-forge nbpresent
 - 方法4: GitHubにJupyter notebookをおくと，[Jupyter Notebook Viewer](http://nbviewer.jupyter.org)で表示できる。プレゼン形式にも出来る。
 
 
-## pdfを出力できるようにする
+### web application化する
+
+[Voila](https://github.com/voila-dashboards/voila)を使うと，ソースコードは隠して，markdown部分と出力のみ見せられる。
+スライダーなどでinteractive widget化しておくと，スライダーを操作しながらデモをできる。
+
+インストール
+```
+$ conda install -c conda-forge voila
+$ pip install voila-gridstack  
+```
+
+使う
+```
+$ voila some.ipynb
+```
+
+### pdfを出力できるようにする
 
 XeLaTeXをインスールしておくこと。
 
