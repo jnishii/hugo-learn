@@ -229,38 +229,49 @@ jupyter notebook形式でテキストを作ったとき，テキストセルで�
 
 ### スライド対応にする
 
-- 方法1: メニュー「View/Cell Toolbar/Slideshow」を選択すると，各セルをスライドにするとかしないとか選択できる。
+#### 方法1: メニュー「View/Cell Toolbar/Slideshow」を選択すると，各セルをスライドにするとかしないとか選択できる。
 最後に以下でスライドモードで表示を行う。
 ```
 $ jupyter nbconvert <file name>.ipynb --to slides --post serve
 ```
-- 方法2: [RISE](https://github.com/damianavila/RISE)を使う。
-	- お手軽に，そこそこに便利に使える。
-	```
-	$ conda install -c damianavila82 rise
-	```
-	jupyter notebook のメニューにスライド表示のボタンが出て，それをクリックすれば直ちにプレゼンを出来る。
+
+#### 方法2: [RISE](https://github.com/damianavila/RISE)
+
+jupyter の拡張機能[RISE](https://github.com/damianavila/RISE)を使うとお手軽にスライド化できる。
+
+```
+$ conda install -c damianavila82 rise
+```
+
+jupyter notebook のメニューにスライド表示のボタンが出て，それをクリックすれば直ちにプレゼンを出来る。
 プレゼン上でプログラムの実行もできる。
-	- どのセルをスライドにするかは，方法1と同様にして選択できる。
-	- カスタマイズ方法は[Customizing RISE](https://github.com/damianavila/RISE/blob/master/doc/customize.md)にある。
-	- メタデータの編集方法は[ここ](https://github.com/damianavila/RISE/blob/master/doc/customize.md#notebook-metadata)にある。
-		- 例えば，コンテンツがページからはみ出るときには，[scroll bar](https://github.com/damianavila/RISE/blob/master/doc/customize.md#enable-a-right-scroll-bar)をつけられる。
-	- 以下はカスタマイズ例。"Edit→Edit Notebook Metadata"を選択して，以下を追加。
-		```
+どのセルをスライドにするかは，方法1と同様にして選択する。
+
+- カスタマイズ方法: [Customizing RISE](https://github.com/damianavila/RISE/blob/master/doc/customize.md)
+- メタデータの編集方法: [ここ](https://github.com/damianavila/RISE/blob/master/doc/customize.md#notebook-metadata)
+
+例えば，コンテンツがページからはみ出るときには，[scroll bar](https://github.com/damianavila/RISE/blob/master/doc/customize.md#enable-a-right-scroll-bar)をつけられる。以下はカスタマイズ例。"Edit→Edit Notebook Metadata"を選択して，以下を追加。
+
+```
   "rise": {
-    "scroll": true,
-    "enable_chalkboard": true
-	}
-		```
-- 方法3: [nbpresent](https://github.com/Anaconda-Platform/nbpresent)を使う。
-スライド作成のいろいろな機能がある。
+    "enable_chalkboard": true,
+    "scroll": true
+  },
+```
+
+#### 方法4: [nbpresent](https://github.com/Anaconda-Platform/nbpresent)
+
+[nbpresent](https://github.com/Anaconda-Platform/nbpresent)にはスライド作成のいろいろな機能がある。
 ```
 conda install -c conda-forge nbpresent
 ```
-- 方法4: GitHubにJupyter notebookをおくと，[Jupyter Notebook Viewer](http://nbviewer.jupyter.org)で表示できる。プレゼン形式にも出来る。
+
+#### 方法5: GitHub上で
+
+GitHubにJupyter notebookをおくと，[Jupyter Notebook Viewer](http://nbviewer.jupyter.org)で表示できる。プレゼン形式にも出来る。
 
 
-### web application化する
+### コンテンツをweb application化する
 
 [Voila](https://github.com/voila-dashboards/voila)を使うと，ソースコードは隠して，markdown部分と出力のみ見せられる。
 スライダーなどでinteractive widget化しておくと，スライダーを操作しながらデモをできる。
