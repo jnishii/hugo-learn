@@ -255,7 +255,10 @@ jupyter notebook のメニューにスライド表示のボタンが出て，そ
 ```
   "rise": {
     "enable_chalkboard": true,
-    "scroll": true
+    "height": 768,
+    "scroll": true,
+    "transition": "slide",
+    "width": 1024
   },
 ```
 
