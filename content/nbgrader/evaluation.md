@@ -3,6 +3,46 @@ title: 自動採点のTips
 weight: 30
 ---
 
+## 自動採点の書式
+
+nbgraderの`Autograder tests`セルにユニットテストを書くだけ。
+関数`func(x=3)`の返り値が1である場合に正解とするなら，以下のように書く。
+
+```
+from nose.tools import eq_
+eq_(func(x=3),1)
+```
+
+これを実行したとき，`func(x=3)`の返り値が不適切なときにエラーが出る。
+エラーが出たときに，受講生に対してわかりやすいメッセージをつけたいときには以下のようにする。
+例えば
+
+```
+from nose.tools import eq_
+
+try:
+	eq_(func(x=3),1)
+except:
+	display('func(x=3)の返り値は1でないといけません')
+
+```
+上記の`display()`で表示される内容を，もっと目立たせるためには，以下のようにエラー
+メッセージ表示用の関数を作ると良い。
+
+```
+from IPython.display import HTML
+from nose.tools import eq_
+
+def _alert(msg):
+        display(HTML('<div class="alert alert-danger">{msg}</div>'.format(msg=msg)))
+
+try:
+	eq_(func(x=3),1)
+except:
+	_alert('func(x=3)の返り値は1でないといけません')
+
+```
+
 ## 自動採点に使えるメソッド
 
 どれもエラーが出た時のメッセージ`msg="..."`を引数に追加できる。
