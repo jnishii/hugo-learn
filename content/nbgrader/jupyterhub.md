@@ -3,7 +3,7 @@ title: jupyterhubとの連携
 weight: 40
 ---
 
-## 設定
+## 設定(1コースの場合)
 
 - [Using nbgrader with JupyterHub](https://nbgrader.readthedocs.io/en/stable/configuration/jupyterhub_config.html)
 
@@ -38,9 +38,52 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 
 ### コース設定
 
-- `~//home/<username>/<course_name>/nbgrader_conf.py`
+- `~/home/<username>/<course_name>/nbgrader_config.py`
 	- `nbgrader quickstart <course_name>`で出力されるものをそのまま使っている。
 
+## 設定(複数コース)
+
+まずは，上記の1コースの設定を一通り理解していることが必要。
+多コースに拡張するための設定の概要は以下の通り。
+
+- `/etc/nbgrader_config.py`に各コース用ホームディレクトリ(担当教員のホーム'/home/<username>/`等)を指定。
+	- 各コースに対して異なるポートを割り振る
+	- 各コースに対するユーザ指定(whitelist)設定をする。
+- 各コース用ホームディレクトリに`~/.jupyter/nbgrader_conf.py`を置いて，課題用ルートフォルダ('/home/<username>/<course_name>')を指定
+
+- `/etc/nbgrader_config.py`もしくは，**学生**の`~/.jupyter/nbgrader_config.py`に以下を追記
+```
+from nbgrader.auth JupyterHubAuthPlugin
+c = get_config()
+c.Exchange.path_includes_course = True
+c.Authenticator.plugin_class = JupyterHubAuthPlugin
+```
+- コース用ディレクトリに`/home/<username>/<course_name>/nbgrader_config.py`を準備(1コースの場合と同じ)
+- 詳細はこちら: [Example Use Case: Multiple Classes](https://nbgrader.readthedocs.io/en/latest/configuration/jupyterhub_config.html#example-use-case-multiple-classes)を参照
+
+
+## アクセス制限
+
+各コースに対するユーザ登録(whitelist作成)も可能。ただし，jupyterhubの再起動が必要。
+
+**[問題点]**
+
+jupyterhubとjupyter notebookが同じサーバ上にあると，jupyterhubの再起動時にログインユーザが追い出されてしまい，再ログインが必要になる。
+
+- [情報源](https://github.com/jupyterhub/jupyterhub/issues/2541)
+
+**[解決法その1]**
+
+proxyサーバを介したアクセスとし，以下の設定をしておく。
+
+```
+Proxy.should_start=False
+JupyterHub.cleanup_servers=False
+```
+
+**[解決法その2]**
+
+jupyterhubとjupyter notebookは別のサーバ(コンテナ)で起動する。
 
 ## おまけ
 
@@ -53,9 +96,10 @@ c.NbGrader.logfile = '/home/<username>/log/nbgrader.log'
 
 
 ### cull_idle
+
 jupyterhubにログインしたままコマンド実行がないプロセスは止めるための設定。`/etc/jupyterhub/jupyterhub.conf`に以下を追記しておく。
 
-```python
+```
 # cull_idle
 c.JupyterHub.services = [
     {
