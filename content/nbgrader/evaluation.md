@@ -14,39 +14,12 @@ eq_(func(x=3),1)
 ```
 
 これを実行したとき，`func(x=3)`の返り値が不適切なときにエラーが出る。
-エラーが出たときに，受講生に対してわかりやすいメッセージをつけたいときには以下のようにする。
-例えば
 
-```
-from nose.tools import eq_
-
-try:
-	eq_(func(x=3),1)
-except:
-	display('func(x=3)の返り値は1でないといけません')
-
-```
-上記の`display()`で表示される内容を，もっと目立たせるためには，以下のようにエラー
-メッセージ表示用の関数を作ると良い。
-
-```
-from IPython.display import HTML
-from nose.tools import eq_
-
-def _alert(msg):
-        display(HTML('<div class="alert alert-danger">{msg}</div>'.format(msg=msg)))
-
-try:
-	eq_(func(x=3),1)
-except:
-	_alert('func(x=3)の返り値は1でないといけません')
-
-```
 
 ## 自動採点に使えるメソッド
 
-どれもエラーが出た時のメッセージ`msg="..."`を引数に追加できる。
-ただし，受講生が初心者の場合には上記の`try`, `except`を使ったほうが，初心者にはわかりにくいエラーメッセージを抑制できる点で良い。
+以下のどのメソッドもエラーが出た時のメッセージ`msg="..."`を引数に追加できる。
+複数の評価を行なってまとめてメッセージ表示する場合は後述のようにtryとexceptを使うと良い。
 
 ### 一般
 
@@ -206,6 +179,36 @@ assert_not_equal(result,result2)
 assert "stone" in result
 assert "paper" in result
 assert "scissors" in result
+```
+
+### エラーメッセージをtryを使って表示する方法
+
+エラーが出たときに，受講生に対してメッセージをつける方法としてtry&exceptを使うこともできる。
+
+```
+from nose.tools import eq_
+
+try:
+	eq_(func(x=3),1)
+except:
+	display('func(x=3)の返り値は1でないといけません')
+	raise
+```
+上記の`display()`で表示される内容を，もっと目立たせるためには，以下のようにエラー
+メッセージ表示用の関数を作ると良い。
+
+```
+from IPython.display import HTML
+from nose.tools import eq_
+
+def _alert(msg):
+        display(HTML('<div class="alert alert-danger">{msg}</div>'.format(msg=msg)))
+
+try:
+	eq_(func(x=3),1)
+except:
+	_alert('func(x=3)の返り値は1でないといけません')
+	raise
 ```
 
 ## 注意点
