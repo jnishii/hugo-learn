@@ -68,11 +68,9 @@ setの要素には順番が定義されないので，`assert_equal()`での判�
 リスト要素を持つリストが，あるリスト要素を含むか(順不同)を確認したいときには以下のような関数を定義使うとよい。
 ```
 def _assert_array_involve(l, ans, msg=""):
-    stat=False
-    for i in l:
-        if np.array_equal(ans,i):
-            stat=True 
-    if stat==False:
+	try:
+	    any( np.array_equal(ans,i) for i in l )
+	except:
         raise ValueError(msg)
 ```
 
