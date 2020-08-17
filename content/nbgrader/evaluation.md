@@ -65,6 +65,17 @@ setの要素には順番が定義されないので，`assert_equal()`での判�
 
 リスト同士(list,np.array同士も含む)の比較には，[numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)の`nt.assert_array_equal`を使うと良い。
 
+リスト要素を持つリストが，あるリスト要素を含むか(順不同)を確認したいときには以下のような関数を定義使うとよい。
+```
+def _assert_array_involve(l, ans, msg=""):
+    stat=False
+    for i in l:
+        if np.array_equal(ans,i):
+            stat=True 
+    if stat==False:
+        raise ValueError(msg)
+```
+
 ### dictに対する判定
 
 [Python unittest - asserting dictionary with lists](https://stackoverflow.com/questions/14491164/python-unittest-asserting-dictionary-with-lists)にのっている以下の方法を使う。dictの要素がいろいろな形式のものに対応できる。
