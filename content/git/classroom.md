@@ -20,27 +20,27 @@ Classroom(講義・演習)でGitHubを使うための[GitHub Classroom](https://
 
 ### 設定手順
 1. Master Organizationの準備
-  - [Organization](https://github.com/settings/organizations)から登録
-  - Master Organizationの名称例) "machine-learning-master"
+    - [Organization](https://github.com/settings/organizations)から登録
+    - Master Organizationの名称例) "machine-learning-master"
 2. 各年度用Organizationの準備
-  - [Organization](https://github.com/settings/organizations)から登録
-  - Organizationの名称例) "intro-machine-learning-2018"
-  - (Optional) TA等の登録
-  - (Optional)Teamの設置(学生チーム等を作る)。
+    - [Organization](https://github.com/settings/organizations)から登録
+    - Organizationの名称例) "intro-machine-learning-2018"
+    - (Optional) TA等の登録
+    - (Optional)Teamの設置(学生チーム等を作る)。
 3. Classroomの設置
-  - [GitHub Classroom](https://classroom.github.com/classrooms)で，2で準備したOrganizationを登録し，誘導に従ってClassroomの設定をする
+    - [GitHub Classroom](https://classroom.github.com/classrooms)で，2で準備したOrganizationを登録し，誘導に従ってClassroomの設定をする
 4. Classroom内にAssignments(宿題やシラバス等)の準備をし，宿題の"Invitation Link"を学生に送る
-  - [Classroom guide/Assignments](https://education.github.com/guide/assignments)参照
-  - 注意: 課題名がURLになる。スペーはは使えない
-  - 課題名の例) "Perceptron-1"
+    - [Classroom guide/Assignments](https://education.github.com/guide/assignments)参照
+    - 注意: 課題名がURLになる。スペーはは使えない
+    - 課題名の例) "Perceptron-1"
 5. 登録学生の一覧はClassroomのページで確認できる。Organization内の非公開リポジトリを学生には公開したい場合は，学生をさらに2で作ったOrganizationのメンバーに登録する。
-  - (Optional) [Organizations](https://github.com/settings/organizations)のページで学生をチーム(Team)に登録。課題がプライベートリポジトリなら，"read access"をTeamに設定する。[teachers_pet](https://github.com/education/teachers_pet)を使うと楽らしい。
+    - (Optional) [Organizations](https://github.com/settings/organizations)のページで学生をチーム(Team)に登録。課題がプライベートリポジトリなら，"read access"をTeamに設定する。[teachers_pet](https://github.com/education/teachers_pet)を使うと楽らしい。
 6. (Optional) シラバスや講義情報等を格納するリポジトリを作る。各年度用Organizationにでも，Master Organizationに作ったほうが長期的管理は(多分)楽。毎年のClassroom設置時にはforkする。
 
 ### 課題の設置
 
 1. Starter Kitの作成
-  1. Master Organizationに宿題用リポジトリを作って，課題等必要なものを入れておく。
+    - Master Organizationに宿題用リポジトリを作って，課題等必要なものを入れておく。
 2. 課題追加作成
   - [GitHub Classroom](https://classroom.github.com/classrooms)で，assignmentレポジトリを追加
 3. 1で作ったStarter Kitから課題を追加

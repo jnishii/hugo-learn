@@ -15,7 +15,7 @@ weight: 10
 ## インストール
 ### nbgraderのインストール
 
-- [Installation](https://nbgrader.readthedocs.io/en/stable/user_guide/installation.html)
+- 参考URL: [Installation](https://nbgrader.readthedocs.io/en/stable/user_guide/installation.html)
 
 ```
 # conda install jupyter
