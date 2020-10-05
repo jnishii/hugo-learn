@@ -65,12 +65,28 @@ setの要素には順番が定義されないので，`assert_equal()`での判�
 
 リスト同士(list,np.array同士も含む)の比較には，[numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)の`nt.assert_array_equal`を使うと良い。
 
+リスト要素を持つリストが，あるリスト要素を含むか(順不同)を確認したいときには以下のような関数を定義使うとよい。
+```
+# check if src involves tgt
+def _def _assert_array_involve(src, tgt, msg=""):
+    try:
+	    assert any( np.array_equal(tgt,i) for i in src )
+    except:
+        _alert(msg)
+        raise ValueError(msg)
+```
+
 ### dictに対する判定
 
-[Python unittest - asserting dictionary with lists](https://stackoverflow.com/questions/14491164/python-unittest-asserting-dictionary-with-lists)にのっている以下の方法を使う。dictの要素がいろいろな形式のものに対応できる。
+[Python unittest - asserting dictionary with lists](https://stackoverflow.com/questions/14491164/python-unittest-asserting-dictionary-with-lists)にのっている以下の方法を使う。dictの要素のtypeによらずに対応できる。
 ```
-assert all( (k,v) in source_dict.items()
-            for (k,v) in dest_dict.items() )
+# check if src involves all items in tgt
+def _assert_dict_equal(src, tgt, msg=""):
+    try:
+        assert all( (k,v) in src.items() for (k,v) in tgt.items() )
+    except:
+        _alert(msg)
+        raise ValueError
 ```
 
 
