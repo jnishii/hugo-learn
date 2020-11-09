@@ -23,16 +23,16 @@ eq_(func(x=3),1)
 
 ### 一般
 
-メソッド | alias | 
-------- | ----- | --------
-`assert_true(x)`||bool(x) is True
-`assert_false(x)`||bool(x) is False
-`assert_is(a, b)`||a is b
-`assert_is_not(a, b)`||a is not b
-`assert_is_none(x)`||x is None
-`assert_is_not_none(x)`||x is not None
-`assert_is_instance(a, b)`||isinstance(a, b)
-`assert_not_is_instance(a, b)`||not isinstance(a, b)
+メソッド | 
+------- | -----
+`assert_true(x)`| bool(x) is True
+`assert_false(x)`| bool(x) is False
+`assert_is(a, b)`| a is b
+`assert_is_not(a, b)`| a is not b
+`assert_is_none(x)`| x is None
+`assert_is_not_none(x)`| x is not None
+`assert_is_instance(a, b)`| isinstance(a, b)
+`assert_not_is_instance(a, b)`| not isinstance(a, b)
 
 
 ### 数値(int, float)の比較
@@ -54,23 +54,23 @@ eq_(func(x=3),1)
 setの要素には順番が定義されないので，`assert_equal()`での判定は不適切。
 例えば以下の関数がある。
 
-メソッド | alias | 
-------- | ----- | --------
-`assert_in(a, b)`||a in b
-`assert_not_in(a, b)`||a not in b
-`assert_count_equal(a, b)`||a and b have the same elements in the same number, regardless of their order.
+メソッド | 
+------- | ----- 
+`assert_in(a, b)`| a in b
+`assert_not_in(a, b)`| a not in b
+`assert_count_equal(a, b)`| a and b have the same elements in the same number, regardless of their order.
 
 
 ### リストに対する判定
 
-リスト同士(list,np.array同士も含む)の比較には，[numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)の`nt.assert_array_equal`を使うと良い。
+リスト同士(list, ndarray同士も含む)の比較には，[numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)の`nt.assert_array_equal`を使う。
 
-リスト要素を持つリストが，あるリスト要素を含むか(順不同)を確認したいときには以下のような関数を定義使うとよい。
+リスト要素を持つリストが，あるリスト要素を含むか(順不同)を確認したいときには以下のような関数を使うとよい。
 ```
 # check if src involves tgt
 def _def _assert_array_involve(src, tgt, msg=""):
     try:
-	    assert any( np.array_equal(tgt,i) for i in src )
+        assert any( np.array_equal(tgt,i) for i in src )
     except:
         _alert(msg)
         raise ValueError(msg)
@@ -92,8 +92,8 @@ def _assert_dict_equal(src, tgt, msg=""):
 
 ### 文字列に対する判定
 
-メソッド | alias | 
-------- | ----- | --------
+メソッド | 
+------- | -----
 `assert_regex(s, r)`||r.search(s)
 `assert_not_regex(s, r)`||not r.search(s)
 
@@ -117,6 +117,9 @@ from nose.tools import assert_not_equal
 - [unittest --- ユニットテストフレームワーク](https://docs.python.org/ja/3/library/unittest.html)
 - [numpy.testing](https://docs.scipy.org/doc/numpy-1.14.1/reference/routines.testing.html)
 	- numpy.testingには`assert_array_not_equal`など，`not`に対する判定ルーチンがない。必要な時には`numpy.testing.assert_raises`を使う。([情報源](https://stackoverflow.com/questions/38506044/numpy-testing-assert-array-not-equal))
+    ```
+    nt.assert_raises(AssertionError, nt.assert_array_equal, L1, L2)
+    ```
 - [math(python標準関数)](https://docs.python.org/3/library/math.html)
 	- `math.isclose()`,`math.isfinite(x)`,`math.isinf(x)`, `math.isnan(x)`
 	- 数値の比較には，`isequal()`や`==`より`math.isclose()`の方が有効数字を決めて比較できるので便利([参考](https://github.com/LDSSA/wiki/wiki/Using-nbgrader-for-Exercise-Notebooks))

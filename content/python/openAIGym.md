@@ -27,9 +27,9 @@ $ pip install gym
 
 A. ライブラリのインストールやアニメーション表示が問題になりますが，そこそこにはなんとかなります。以下を見てください。
 
-- [ColaboratoryでOpenAI gym](http://bcl.sci.yamaguchi-u.ac.jp/~jun/ja/blog/180828-openai-colaboratory)
-- [ColaboratoryでKeras-rl+OpenAI Gym (classical_control)](http://bcl.sci.yamaguchi-u.ac.jp/~jun/ja/blog/180828b-kerasrl-colaboratory)
-- [ColaboratoryでKeras-rl+OpenAI Gym (atari)](http://bcl.sci.yamaguchi-u.ac.jp/~jun/ja/blog/180829-kerasrl-atari-colaboratory)
+- [ColaboratoryでOpenAI gym](http://bcl.sci.yamaguchi-u.ac.jp/~jun/home/180828-openai-colaboratory/)
+- [ColaboratoryでKeras-rl+OpenAI Gym (classical_control)](http://bcl.sci.yamaguchi-u.ac.jp/~jun/home/180828b-kerasrl-colaboratory/)
+- [ColaboratoryでKeras-rl+OpenAI Gym (atari)](http://bcl.sci.yamaguchi-u.ac.jp/~jun/home/180829-kerasrl-atari-colaboratory/)
 
 
 #### Q. 実行時のエラー: "Error: Tried to reset environment which is not done. While the monitor is active for CartPole-v1, you cannot call reset() unless the episode is over."
