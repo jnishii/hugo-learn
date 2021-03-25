@@ -1,5 +1,5 @@
 ---
-title: GitHubレポジトリ
+title: GitHubリポジトリ
 weight: 100
 ---
 
