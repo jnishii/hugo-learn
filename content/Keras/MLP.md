@@ -8,4 +8,5 @@ weight: 40
 
 ## サンプルプログラム
 
-<script src="https://gist.github.com/jnishii/48b185a5664ab54b91c1423f99fbfc49.js"></script>
+{{<gist jnishii 48b185a5664ab54b91c1423f99fbfc49 >}}
+

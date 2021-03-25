@@ -1,6 +1,6 @@
 ---
 title: GitHubレポジトリ
-weight: 5
+weight: 100
 ---
 
 GitHubの公開レポジトリにおいてあるもの(の一部)

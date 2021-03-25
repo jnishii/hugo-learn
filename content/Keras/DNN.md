@@ -30,6 +30,6 @@ Kerasでは，MNISTデータベースの他，いくつかのデータセット�
 
 ## サンプルプログラム
 
-<script src="https://gist.github.com/jnishii/cac4804b5fc267dbb86036c971c7eba4.js"></script>
+{{< gist jnishii cac4804b5fc267dbb86036c971c7eba4 >}}
 
 畳み込みニューラルネットワークによる文字認識デモは[Keras-js](https://transcranial.github.io/keras-js/#/)にあります。

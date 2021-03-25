@@ -1,6 +1,6 @@
 ---
 title: GitHub Classroom
-weight: 30
+weight: 90
 ---
 
 Classroom(講義・演習)でGitHubを使うための[GitHub Classroom](https://classroom.github.com/classrooms)がある。

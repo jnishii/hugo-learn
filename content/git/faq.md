@@ -1,6 +1,6 @@
 ---
 title: トラブル対応
-weight: 20
+weight: 80
 ---
 
 ## Gitコマンドのエラー

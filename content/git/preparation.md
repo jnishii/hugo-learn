@@ -1,6 +1,6 @@
 ---
 title: GitHubを使う準備
-weight: 2
+weight: 20
 ---
 
 習うより慣れよで，使ってみましょう。
