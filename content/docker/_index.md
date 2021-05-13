@@ -7,18 +7,18 @@ weight: 14
 ```
 $ conda install -c menpo opencv
 ```
-としたが，動画表示ができない。
+としたが動画表示ができない。
 opencvをbuildし直してffmpegと連携させる必要アリとのこと。
-いろいろな事情で，WindowsでもLinuxでもMacでも同じ環境でテストできるようにしたいので, Dockerでイメージを作っておくのが，一番ラクかという結論に。
+いろいろな事情でWindowsでもLinuxでもMacでも同じ環境でテストできるようにしたいので, Dockerでイメージを作っておくのが一番ラクかという結論に。
 
 というわけで 以下はDockerイメージの作り方と使い方のメモ。
 
 ## 基本用語
 
 かなり適当な説明なので，正確なことはgoogle先生に聞いて下さい。
-- [Docker](https://www.docker.com/): 軽量なアプリケーション開発用仮想マシンのようなもの
-- イメージ: 仮想マシンのOSのようなもの
-- コンテナ: イメージを読み込んで実行する環境
+- [Docker](https://www.docker.com/): 軽量なアプリケーション開発用仮想化環境
+- Dockerイメージ: Dockerで動かす仮想マシンのOSイメージ
+- コンテナ: Dockerイメージを読み込んで実行する環境
 
 ## Dockerイメージを作る
 
@@ -209,4 +209,5 @@ $ ./docker-X.sh
 	- jupyter/scipy-notebook と jupyter/r-notebook の合体版
 	- 関連イメージや詳細情報は[Selecting an Image](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)
 - [rocker/verse](https://hub.docker.com/r/rocker/verse)
+    - R+tidyverseの開発環境
 	- [githubのページはこちら](https://github.com/rocker-org/rocker)
