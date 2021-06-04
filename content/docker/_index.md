@@ -76,8 +76,8 @@ $ docker run -v /Users/pochi/:/home/pochi/ --rm <イメージ名>
 ダウンロードしたイメージがたまっていることもある。
 
 - $ [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
-	- コンテナの一覧表示
-	- 停止中のものも表示するときは`-a`をつける
+  - コンテナの一覧表示
+  - 停止中のものも表示するときは`-a`をつける
 - `$ docker rm <コンテナID>`: 不要なコンテナがあったら，コンテナのIDを確認して削除する。ID指定は最初の3文字のみでもOK。
 - `$ docker images`: 不要なイメージがないか確認。
 - `$ docker rmi <イメージID>`: 不要なイメージを削除。
@@ -99,12 +99,40 @@ ubuntu                             16.10               7d3f705d307c        3 mon
 ```
 
 ## その他いろいろ
+
 ### 起動中のコンテナのbashターミナルを開きたい
 
 ```
 docker exec -it <コンテナID> /bin/bash
 ```
 コンテナIDは`docker ps`で取得。
+
+
+### 作成したイメージにタグをつけたい
+
+手元にあるイメージにリリース番号等をタグとしてつけて、Dockerhubにアップロードする方法
+
+```
+$ docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED        SIZE
+jnishii/docker-gym-nongpu36   latest    b11b6f95c088   21 hours ago   2.21GB
+
+```
+
+TAGをリリース番号1.0.0にするには以下を実行。以下の第二引数は上記IMAGE IDの初めの3桁を指定
+
+```
+$ docker tag b11 jnishii/docker-gym-nongpu36:1.0.0
+
+```
+
+dockerhubのパスワードを聞かれるので入力する。その後イメージのアップロード
+
+
+```
+$ docker login --username=yourhubusername
+$ docker push jnishii/docker-gym-nongpu36
+```
 
 
 ### コンテナからイメージ作成
@@ -133,7 +161,7 @@ Dockerイメージに，jupyter標準のdatascience-notebook等を使う時は�
 
 ```
 $ docker run -it --rm イメージ名 /bin/bash
-jovyan$ python -c 'from notebook.auth import passwd;print(passwd())' 
+jovyan$ python -c 'from notebook.auth import passwd;print(passwd())'
 jovyan$ exit
 ```
 
