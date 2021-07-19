@@ -69,7 +69,7 @@ $ brew tap caskroom/cask
 - [Atom](https://atom.io/): エディタ([こちら](/editors/atom)にも解説あり)
 - [Sublime Text 3](https://www.sublimetext.com/): エディタ([こちら](/editors/sublime)にも解説あり)
 - [grace](http://plasma-gate.weizmann.ac.il/Grace/): グラフプロッタ
-- [sshfs](https://formulae.brew.sh/formula/sshfs): ssh経由でリモートディレクトリをマウントするコマンド．[osxfuse](https://osxfuse.github.io/)もインストールしておく
+- [sshfs](https://formulae.brew.sh/formula/sshfs): ssh経由でリモートディレクトリをマウントするコマンド．[macFUSE](https://osxfuse.github.io/)もインストールしておく
 
 
 ```

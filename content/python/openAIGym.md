@@ -55,14 +55,14 @@ idの名前を変えれば，仮に違う名前の環境として定義できる
 **方法1**
 
 以下のように引数`is_sleppery`を使って，決定論的状態遷移に変更できる。
-```python
+```
 env = gym.make("FrozenLake-v0", is_slippery=False)
 ```
 
 **方法2**
 
 以下のような設定を加える。ついでに，他のパラメータ設定もできる。
-```python
+```
 from gym.envs.registration import register
 register(
     id='FrozenLakeNotSlippery-v0',
