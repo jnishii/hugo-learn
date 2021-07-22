@@ -7,6 +7,13 @@ title: VS Code
 
 [Visual Studio Code](https://code.visualstudio.com/download)からダウンロードしてインストール
 
+## Terminal command
+
+`code`コマンドでVS Codeを起動できるようにする。
+
+- Command Palette`Cmd-Shift-P`を開いて，`shell command: Install code command in PATH command`を選択
+- ターミナルを再起動
+
 ## Key binding
 
 - ショートカットの一覧(Mac OS用)は[こちら](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
