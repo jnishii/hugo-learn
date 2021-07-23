@@ -11,7 +11,7 @@ title: VS Code
 
 `code`コマンドでVS Codeを起動できるようにする。
 
-- Command Palette`Cmd-Shift-P`を開いて，`shell command: Install code command in PATH command`を選択
+- Command Palette (`Cmd-Shift-P`) を開いて，`shell command: Install code command in PATH command`を選択
 - ターミナルを再起動
 
 ## Key binding
