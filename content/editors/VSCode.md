@@ -2,7 +2,6 @@
 title: VS Code
 ---
 
-
 ## インストール
 
 [Visual Studio Code](https://code.visualstudio.com/download)からダウンロードしてインストール
@@ -38,9 +37,8 @@ title: VS Code
 - [Visual Studio Code で Markdown 編集環境を整える
 ](https://qiita.com/kumapo0313/items/a59df3d74a7eaaaf3137)
 
-### LateX
+### その他の拡張機能
+
 - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
-
-参考URL
-
-- [VSCode で最高の LaTeX 環境を作る](https://qiita.com/rainbartown/items/d7718f12d71e688f3573)
+    - [VSCode で最高の LaTeX 環境を作る](https://qiita.com/rainbartown/items/d7718f12d71e688f3573)
+- [Jupyter Extensin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
