@@ -120,6 +120,7 @@ nbtest/nbgrader_config.py
 ```
 c = get_config()
 c.CourseDirectory.root = '/home/your_account/nbtest'
+c.NbGrader.logfile = '/home/your_account/nbtest/log/nbgrader.log'
 ```
 
 各コース用の`nbgrader_config.py`は，各コースのトップディレクトリに置いておく。
@@ -128,7 +129,8 @@ c.CourseDirectory.root = '/home/your_account/nbtest'
 
 jupyter notebookのタブ"Formgrader"をクリックすると，課題シートをどんどん作れる。
 
-### 困った点: jupyter notebookのタブ"Formgrader"をクリックしてもエラーが出る
+
+### 困ったことと解決法: jupyter notebookのタブ"Formgrader"をクリックしてもエラーが出る
 
 そもそも`~/.jupyter/nbgrader_config.py`を参照してもらえない。
 `/etc/jupyterhub/jupyterhub_config.py`の`default_url`の設定を変えたら解決。
