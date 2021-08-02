@@ -59,9 +59,9 @@ h5 {
 h6 {
   font-size: 0.9rem; }
 
-/* code fence */
+/* code fence 
 pre {
-	background: #f6f6f6;  /* margin color of code fence (org: #282c34) */
+	background: #f6f6f6; 
 	border: 1px solid #ddd;
 	font-size: 1rem;
 }
@@ -70,6 +70,7 @@ pre code {
     font-size: .9rem;
     white-space: pre;
 }
+*/
 
 pre .copy-to-clipboard {
     background-color: #eee;
@@ -103,4 +104,10 @@ code.has-jax {
     border: inherit;
     color: #444;
 }
+
+
+element.style {
+background-color: black;
+}
+
 
