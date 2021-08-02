@@ -480,3 +480,6 @@ alt.Chart(url).mark_line().encode(
 )
 ```
 
+## jupyter と altair と hugo
+jupyter 上で altairのグラフを作り，md形式でファイルで出力してhugoでhtml化すると，もれなくhtml上でもグラフを見れる。素晴らしい。ただし，グラフ用データが全てファイル内に記載されるので，下手をするとえらく大きなhtmlファイルを作ることになるので注意。
+そこで以下のように自動化した。

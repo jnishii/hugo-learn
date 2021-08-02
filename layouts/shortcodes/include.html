@@ -1,0 +1,12 @@
+{{ $base_path := $.Page.Dir }}
+
+{{ $file := .Get 0  }}
+
+{{ $file_path := printf "content/%s%s" $base_path $file }}
+
+
+{{ if strings.HasSuffix $file ".html" }}
+    {{  $file_path  | readFile  | safeHTML }}
+{{ else if strings.HasSuffix $file ".md" }}
+    {{  $file_path  | readFile  | markdownify  }}
+{{ end }}

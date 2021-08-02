@@ -11,7 +11,7 @@ weight: 6
 
 設定が既にされていないことを確認してから，作業すること。
 以下で，環境変数に設定の有無をチェックできる
-```
+```bash
 $ printenv |grep proxy
 $ printenv |grep PROXY
 ```
