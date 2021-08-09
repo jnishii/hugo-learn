@@ -71,17 +71,39 @@ def function(x):
 
 ### 具体例
 
-- 各引数の説明は，別の行に書く
+
+具体的な書き方には，いくつかお流儀がある。
+以下は，Googleスタイルでの例。Google Styleのいろいろな例は[Example Google Style Python Docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)を参照。
+
 
 ```
-def complex(real=0.0, imag=0.0):
-    """Form a complex number.
+def example_function(param1, param2):
+    """Example function with types documented in the docstring.
 
-    Keyword arguments:
-    real -- the real part (default 0.0)
-    imag -- the imaginary part (default 0.0)
+    Args:
+        param1 (int): The first parameter.
+        param2 (int): The second parameter.
+
+    Returns:
+        int: Sum of param1 and param2.
+
+    Examples:
+        Examples should be written in doctest format, and should illustrate how
+        to use the function.
+
+        >>> example_function(4, 5)])
+        9
+
     """
-    if imag == 0.0 and real == 0.0:
-        return complex_zero
-    ...
+    return param1 + param2
 ```
+
+## docstringを抽出してmarkdownに
+
+ソースコード中のdocstringを抽出してmarkdownにするスクリプトがいろいろある。
+どれが良いかは不明。。。
+
+-[coldfix/doc2md](https://github.com/coldfix/doc2md)
+- [krassowski/docstring-to-markdown](https://github.com/krassowski/docstring-to-markdown)
+
+
