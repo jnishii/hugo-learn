@@ -25,6 +25,16 @@ $ sudo tlmgr update --self --all
 $ sudo tlmgr paper a4
 ```
 
+M1チップの場合、``tlmgr: command not found`となったら以下のようにパス指定。
+
+```
+sudo /usr/local/texlive/2021/bin/universal-darwin/tlmgr path add
+```
+
+- M1 Macへのインストール方法は[M1 MacへのTex導入方法【2021年版】
+](https://moromisenpy.com/m1-mactex2021/)を参照。
+    - AtomのLaTex環境設定の説明もあってgoodです。
+
 ### 設定(Catalina,Mojaveの場合)
 
 情報源: [macOS Mojave / macOS High Sierra / macOS Sierra / OS X El Capitan に付属するヒラギノフォントのセットアップ](https://texwiki.texjp.org/?%E3%83%92%E3%83%A9%E3%82%AE%E3%83%8E%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88#macos-hiragino-setup)
