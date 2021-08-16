@@ -1,11 +1,13 @@
 ---
-title: 関数の可変長引数
+title: 関数の引数
 weight: 80
 ---
 
+## 可変長の引数
+
 Pythonでは関数の引数の個数を可変にできる。
 
-## `*args`の例
+### `*args`の利用例
 
 個数が決まってない部分は習慣的に引数名`*args`としておく。
 
@@ -45,9 +47,9 @@ arg3: 3
 呼び出した関数から、さらに他の関数を呼び出して、そこに色々な引数を指定
 したいときには、とても便利に使える。
 ただし、引数名もともに値をわたせた方が便利なので、具体的な例については
-次の「`**kwargs`の例」の中で説明する。
+次の「`**kwargs`の利用例」の中で説明する。
 
-## `**kwargs`の例
+### `**kwargs`の利用例
 
 
 可変長の引数指定を引数名とともにしたいときには、以下のように`**kwargs`を使う。
@@ -86,8 +88,28 @@ arg3: 3
 上の2つの組み合わせると、以下のように、関数内で呼び出す関数に色々な引数を渡せる。
 ```python
 def test(df, *args)
-    # ここで何かデータの前処理をする
+    # ここで何かデータフレームdfの前処理をする
     df.plot(*args) # plotの引数を渡す
 
 test(df, kind='bar', legend=True)
 ```
+
+## 引数を関数にする
+
+以下のように関数の引数に、関数を指定することができる。
+ついでに可変引数`**kwargs`も利用して、色々な関数のグラフ化を簡単にしている。
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_function(fn,**kwargs):
+    x = np.linspace(0, 10, 100)
+    y = fn(x)
+
+    plt.plot(x, y, **kwargs)
+    plt.show()
+
+plot_function(fn=np.sin, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=2)
+```
+![](images/function-plot)

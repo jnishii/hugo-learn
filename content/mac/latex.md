@@ -15,20 +15,16 @@ M1 Macの場合は、まず以下を行う。
 ```
 $ brew install mactex --cask
 ```
-パスの設定(terminal上で実行かつ，`~/.bash_profile` 等で設定)
+パスの設定(`~/.bash_profile` 等で設定し、`source ~/.bash_profile`で反映)
 ```
-$ export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/:$PATH
+$ export PATH=/usr/local/texlive/2021/bin/universal-darwin/:$PATH # M1 chip の場合
+$ export PATH=/usr/local/texlive/2021/bin/x86_64-darwin/:$PATH   # Intel chip の場合
 ```
+
 TeXまわりのアップデート
 ```
 $ sudo tlmgr update --self --all
 $ sudo tlmgr paper a4
-```
-
-M1チップの場合、``tlmgr: command not found`となったら以下のようにパス指定。
-
-```
-sudo /usr/local/texlive/2021/bin/universal-darwin/tlmgr path add
 ```
 
 - M1 Macへのインストール方法は[M1 MacへのTex導入方法【2021年版】
