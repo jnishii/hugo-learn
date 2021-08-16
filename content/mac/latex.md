@@ -5,8 +5,15 @@ weight: 3
 
 ### インストール
 
+M1 Macの場合は、まず以下を行う。
+
 ```
-$ brew cask install mactex
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+ここからは、IntelチップもM1チップも同様。
+```
+$ brew install mactex --cask
 ```
 パスの設定(terminal上で実行かつ，`~/.bash_profile` 等で設定)
 ```
