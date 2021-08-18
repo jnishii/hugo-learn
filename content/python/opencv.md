@@ -1,7 +1,7 @@
 ---
 title: OpenCV
 published: false
-weight: 30
+weight: 90
 ---
 
 ## OpenCV関連
