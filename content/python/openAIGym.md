@@ -1,6 +1,6 @@
 ---
 title: OpenAI Gym
-weight: 40
+weight: 30
 ---
 
 ## OpenAI Gymのメモ

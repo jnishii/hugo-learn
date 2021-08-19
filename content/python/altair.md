@@ -1,6 +1,6 @@
 ---
 title: Altair
-weight: 60
+weight: 70
 ---
 
 [Altair](https://altair-viz.github.io/index.html)は，Pythonでインタラクティブ・プロットを簡単に作れるライブラリの一つ。以下は折れ線グラフの作り方の説明。
