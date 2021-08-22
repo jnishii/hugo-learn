@@ -1,6 +1,6 @@
 ---
 title: plotly
-weight: 70
+weight: 80
 ---
 
 [plotly](https://plotly.com/)は，Pythonでインタラクティブ・プロットを簡単に作れるライブラリの一つ。以下は折れ線グラフの作り方の説明。
