@@ -102,7 +102,7 @@ cols_num = train.columns.get_indexer(train.select_dtypes(include=['float','int']
 
 ### 各列にある異なる文字列要素の数
 
-列名と，その列にある異なる文字列要素をを辞書に格納する。
+列名と，その列にある異なる文字列要素の数を辞書に格納する。
 ついでに，出現頻度でソートする。
 
 ```python
@@ -113,6 +113,7 @@ sorted(d.items(), key=lambda x: x[1])
 ```
 
 - 参考: [Exercise:Categorical Variables (Kaggle)](https://www.kaggle.com/cellish/exercise-categorical-variables/)
+
 
 ### データフレーム`df_B`の各列(type object)の要素が, `df_A`のsubsetか確認
 
