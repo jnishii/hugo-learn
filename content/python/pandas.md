@@ -5,7 +5,7 @@ weight: 60
 
 ## Pandas関連のちょっとしたTips
 
-### ファイルを読み込むとき，日付文字列をindexにする
+### ファイルを読み込むとき，日付文字列をindexに指定
 
 列名`date`のデータに日付(YYYY-MM-DD)がある場合。
 
@@ -32,15 +32,15 @@ df = pd.read_csv('sample_date.csv',
 print(df.isnull().sum(axis=0)) # 行ごとの場合 axis=1
 ```
 
-### 要素がある値以上であるセルの個数を数える。
+### 要素がある値以上であるセルの個数
 
-0以上の値があるセルが各行にいくつあるか数える例
+各行に0以上の値がいくつあるか数える例
 ```python
 concrete["result"] = concrete.gt(0).sum(axis=1)
 
 ```
 
-### グループごとにある列の平均値を求め，もとのデータフレームの各行に追加する
+### グループごとにある列の平均値を求め，もとのデータフレームの各行に追加
 
 データフレームの行数は変えず，各行に，該当する特徴(〇〇州在住)から得られる新たな特徴量(〇〇州在住平均年収)を追加する。
 データの集約には"max","min","median","var","std","count"も使える。
@@ -100,7 +100,7 @@ cols_num = train.select_dtypes(include=['float','int']).columns
 cols_num = train.columns.get_indexer(train.select_dtypes(include=['float','int']).columns)
 ```
 
-### ある列の文字列を複数の列に分割する
+### ある列の文字列を複数の列に分割
 
 データフレーム"members"の列`email`を'@'マークを区切り文字として2列に分割する例
 
@@ -129,7 +129,7 @@ sorted(d.items(), key=lambda x: x[1])
 - 参考: [Exercise:Categorical Variables (Kaggle)](https://www.kaggle.com/cellish/exercise-categorical-variables/)
 
 
-### データフレーム`df_B`の各列(type object)の要素が, `df_A`のsubsetか確認
+### データフレーム`df_B`の各列(type object)の要素が `df_A`のsubsetか確認
 
 ```python
 object_cols = [col for col in df_A.columns if df_A[col].dtype == "object"]
