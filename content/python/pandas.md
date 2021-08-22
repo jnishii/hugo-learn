@@ -25,6 +25,7 @@ df = pd.read_csv('sample_date.csv',
 
 - 参考: [pandas.DataFrame, Seriesを時系列データとして処理](https://note.nkmk.me/python-pandas-time-series-datetimeindex/)
 
+
 ### 列ごとの欠損値の数
 
 ```python
@@ -77,7 +78,7 @@ df_valid[["Coverage", "AverageClaim"]].head(10)
 
 - 参考URL[Creating Features (Kaggle)](https://www.kaggle.com/ryanholbrook/creating-features)
 
-### 特定のデータ形式の列の名前
+### 特定のデータ形式の列名の抽出
 
 要素が文字列(object)である列の名前の抽出方法を2通り
 ```python
@@ -97,6 +98,19 @@ cols_num = train.select_dtypes(include=['float','int']).columns
 
 ```python
 cols_num = train.columns.get_indexer(train.select_dtypes(include=['float','int']).columns)
+```
+
+### ある列の文字列を複数の列に分割する
+
+データフレーム"members"の列`email`を'@'マークを区切り文字として2列に分割する例
+
+```python
+df[["ID", "domain"]] = (  # 分割結果を格納する
+    members["email"]           # 列`email`を分割
+    .str                         # 文字列に対する演算をする
+    .split("@", expand=True)     # 空白で分割して複数列にする
+
+)
 ```
 
 
