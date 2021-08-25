@@ -59,15 +59,17 @@ arg3: 3
 def test(arg1, **kwargs):
     print("*kwargs:", *kwargs)
     print("kwargs:", kwargs)
+    print(type(kwargs))
 
 test(arg1=1,arg2=2,arg3=3)
 ```
 ```
 *kwargs: arg2 arg3
 kwargs: {'arg2': 2, 'arg3': 3}
+<class 'dict'>
 ```
 
-関数内では`kwargs`で参照するとdictとして参照できる。
+関数内ではオブジェクト`kwargs`はdictを，`*kwargs`はそのキー一覧を表すことがわかる。
 逆に、dictで引数をまとめて渡すこともできる。
 
 ```python
@@ -97,7 +99,7 @@ test(df, kind='bar', legend=True)
 ## 引数を関数にする
 
 以下のように関数の引数に、関数を指定することができる。
-ついでに可変引数`**kwargs`も利用して、色々な関数のグラフ化を簡単にしている。
+ついでに可変引数`**kwargs`も利用して、色々な関数のグラフ化を簡単にできるようにしてみた。
 
 ```python
 import matplotlib.pyplot as plt
@@ -113,3 +115,21 @@ def plot_function(fn,**kwargs):
 plot_function(fn=np.sin, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=2)
 ```
 ![](images/function-plot)
+
+## 引数を辞書にまとめてわたす
+
+ここまでの説明で多分わかるように，関数の引数は実は辞書`dict`にまとめて渡すことができる。
+引数が多いときにはとても便利。
+データ解析等でチューニングパラメータが多いとき等によく使う。
+
+``python
+params: {
+    'val1': 1,
+    'val2': 2, 
+    'val3': 3
+}
+
+
+test(**params)
+```
+
