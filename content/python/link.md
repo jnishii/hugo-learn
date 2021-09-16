@@ -88,9 +88,24 @@ title: リンク集
 
 ## 機械学習関連
 
+### 一般
+
+- [Kaggle](https://www.kaggle.com)
 - [openAI Gym](https://gym.openai.com/)
 - [An introduction series to Reinforcement Learning (RL) with comprehensive step-by-step tutorials](https://github.com/vmayoral/basic_reinforcement_learning)
 - [Implementation of Reinforcement Learning Algorithms. Python, OpenAI Gym, Tensorflow. Exercises and Solutions to accompany Sutton's Book and David Silver's course](https://github.com/dennybritz/reinforcement-learning)
 - [Deep Reinforcement Learning Tutorial
 ](https://github.com/awjuliani/oreilly-rl-tutorial)
 	- [O'Reillyの書籍](https://conferences.oreilly.com/artificial-intelligence/ai-ny-2017/public/schedule/detail/59390)のjupyter形式ノートブック
+
+### Exploratory Data Analysis (EDA)
+
+- [SweetViz](https://github.com/fbdesignpro/sweetviz)
+- [Pandas-Profiling](https://github.com/pandas-profiling/pandas-profiling)
+- [D-Tale](https://github.com/man-group/dtale)
+
+### AutoML
+
+- [AutoGluon: AutoML for Text, Image, and Tabular Data](https://auto.gluon.ai/stable/index.html)
+- [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
+
