@@ -96,3 +96,13 @@ $ git reset --hard HEAD
 ```
 $ git revert <序論を修正したバージョンのID>
 ```
+
+### 一度pushしてしまったファイルを履歴から完全に消す
+
+`git push`したファイルは，その後削除しても履歴には残る。これを完全に削除する方法。
+
+1. [git-filter-repo](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md)をインストール
+2. `git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch <path to the file or directory>' --prune-empty --tag-name-filter cat -- --all`
+
+情報源
+- [How to remove file from Git history?](https://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history)
