@@ -86,3 +86,7 @@ A. remote repository の URLにユーザ名を加えたら治った。
 ```
 $ git remote set-url origin https://<user name>@github.com/someone/somerepo.git
 ```
+
+## Q. デフォルトブランチの名前をmasterからmainに変えたい
+
+githubはデフォルトブランチの名前をmasterからmainに変更した。これにあわせて，すでに作っていたリポジトリのブランチ名を変える方法は[ここ](https://qiita.com/masakinihirota/items/1a657674e609be112fc6)が詳しかった。
