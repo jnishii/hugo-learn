@@ -5,6 +5,14 @@ weight: 60
 
 ## Pandas関連のちょっとしたTips
 
+### 一覧表示のときの最大表示行数を制限
+
+以下は5行に制限する場合
+
+```python
+pd.set_option('max_rows', 5)
+```
+
 ### ファイルを読み込むとき，日付文字列をindexに指定
 
 列名`date`のデータに日付(YYYY-MM-DD)がある場合。
