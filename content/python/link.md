@@ -104,6 +104,11 @@ title: リンク集
 - [Pandas-Profiling](https://github.com/pandas-profiling/pandas-profiling)
 - [D-Tale](https://github.com/man-group/dtale)
 
+### 
+
+- [ELI5](https://eli5.readthedocs.io/en/latest/overview.html#installation)
+  - scikit-learn, Keras, XGBoostなどのパッケージで学習した結果について，各特徴量の重要性等の解析を行う
+
 ### AutoML
 
 - [AutoGluon: AutoML for Text, Image, and Tabular Data](https://auto.gluon.ai/stable/index.html)
