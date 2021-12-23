@@ -4,3 +4,4 @@ public/
 resources/
 *~
 themes/hugo-theme-learn
+.hugo_build.lock

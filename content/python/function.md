@@ -112,23 +112,24 @@ def plot_function(fn,**kwargs):
     plt.plot(x, y, **kwargs)
     plt.show()
 
-plot_function(fn=np.sin, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=2)
+plot_function(
+    fn=np.sin, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=2
+    )
 ```
 ![](images/function-plot)
 
-## 引数を辞書にまとめてわたす
+## 引数を辞書にしてまとめてわたす
 
 ここまでの説明で多分わかるように，関数の引数は実は辞書`dict`にまとめて渡すことができる。
 引数が多いときにはとても便利。
 データ解析等でチューニングパラメータが多いとき等によく使う。
 
-``python
-params: {
+```python
+params = {
     'val1': 1,
     'val2': 2, 
     'val3': 3
 }
-
 
 test(**params)
 ```
