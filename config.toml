@@ -18,7 +18,9 @@ googleAnalytics = "UA-48444845-1"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
+  disableLandingPageButton = true
   themeVariant = "ocean"
+  titleSeparator = "::"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

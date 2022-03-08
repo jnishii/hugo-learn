@@ -44,7 +44,7 @@ $ git clone https://github.com/yyuu/pyenv.git ${PYENV_ROOT}
 
 ### Step 3: パス設定: `~/.bash_profile`に以下を追記する。
 ```
-export PATH="${PYENV_ROOT}/bin:$PATH"
+export PATH="${PYENV_ROOT}/shims:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 ```
 再び，`~/.bash_profile`の読み込みをお忘れなく。
