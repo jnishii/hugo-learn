@@ -1,56 +1,13 @@
 ---
-title: Pythonのインストール
-weight: 10
+title: 環境構築(pyenv/anaconda)
+weight: 11
 ---
 
-pyenv/anaconda を使って Mac上に python 環境を作る方法です。
-
-- [pyenv](https://github.com/yyuu/pyenv): 複数のバージョンのpythonをインストールしたり，使うバージョンを切り替えたりするのに便利なツール。
-- [Anaconda](https://www.continuum.io/why-anaconda): Pythonとデータ解析モジュールのディストリビューション
-
-Macでhomebrewを使う人も，Linuxの人も以下の手順でOKのはずです。
-proxy設定が必要なネットワーク環境の方は，[Proxy設定](../../proxy)を見て, ターミナルの環境変数設定とanacondaの設定をしてください。
+pyenv/anaconda を使って Mac/Linux上に python 環境を作る方法です。
 
 ## 準備: pyenv のインストール
 
-### Step 1. PYENV_ROOTの設定
-
-`pyenv` 環境をインストールする場所を設定する。
-homebrewでインストールする場合のデフォルトでは`~/.pyenv/`(つまり，自分のホーム内に)。
-環境変数`PYENV_ROOT`の設定で，インスール先は変更できる。
-以下は，デフォルト通りの設定した場合と，`/usr/local/var/pyenv`にした場合の例。
-```
-export PYENV_ROOT="${HOME}/.pyenv"  # デフォルト通り，`~/.pyenv`にインストールする場合
-export PYENV_ROOT=/usr/local/var/pyenv # デフォルトから変えたい場合の例
-```
-例えば，自分のホームがNFSサーバ上にあり，`/usr/local/`はローカルディスク上ならば，`/usr/local`にインストールするほうが，コマンドの呼び出しのオーバヘッドが短くなる。
-`~/.bash_profile`を変更したら，読み込みを忘れずに。
-```
-$ . ~/.bash_profile # <= 読み込み
-$ printenv PYENV_ROOT # <= PYENV_ROOTが無事設定できているか確認
-```
-
-### Step 2: pyenvのインストール
-
-**Mac**でhomebrewを使う場合は以下で。
-```
-$ brew install pyenv
-```
-**Linux**の場合は，githubから直接ダウンロードする。
-```
-$ cd ~/
-$ git clone https://github.com/yyuu/pyenv.git ${PYENV_ROOT}
-```
-
-### Step 3: パス設定: `~/.bash_profile`に以下を追記する。
-```
-export PATH="${PYENV_ROOT}/shims:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-```
-再び，`~/.bash_profile`の読み込みをお忘れなく。
-```
-$ . ~/.bash_profile
-```
+[このページ](./install-pyenv.md)を見てpyenvを導入しましょう。
 
 ## Anacondaをインストール
 
