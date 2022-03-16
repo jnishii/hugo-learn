@@ -4,12 +4,9 @@ weight: 10
 ---
 
 Pythonの環境構築に必要なpyenvを上に導入する方法です。
-さらにPython環境の構築をするには[anacondaを使う方法](./install-anaconda.md)や[poetryを使う方法](./install-poetry.md)のページを見てください。
+このページでは，pyenv の導入方法を説明します。
 
 - [pyenv](https://github.com/yyuu/pyenv): 複数のバージョンのpythonをインストールしたり，使うバージョンを切り替えたりするのに便利なツール。
-- [Anaconda](https://www.continuum.io/why-anaconda): Pythonとデータ解析モジュールのディストリビューション。とりあえず一式揃えたい人はこちらが便利
-- [poetry](https://python-poetry.org/): Pythonのパッケージ管理ツール。環境構築を必要最小限にしたい人，自分独自のPython環境の構築・管理をしたい人はこちらが便利
-
 
 Macでhomebrewを使う人も，Linuxの人も以下の手順でOKのはずです。
 proxy設定が必要なネットワーク環境の方は，[Proxy設定](../../proxy)を見て, ターミナルの環境変数設定とanacondaの設定をしてください。
@@ -54,3 +51,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 ```
 $ . ~/.bash_profile
 ```
+## さらにいろいろインストール
+
+さらにPythonのプログラム開発に必要なライブラリ等をインストールするには[anacondaを使う方法](./install-anaconda.md)や[poetryを使う方法](./install-poetry.md)のページを見てください。
+- [Anaconda](https://www.continuum.io/why-anaconda): Pythonとデータ解析モジュールのディストリビューション。とりあえず一式揃えたい人はこちらが便利
+- [poetry](https://python-poetry.org/): Pythonのパッケージ管理ツール。環境構築を必要最小限にしたい人，自分独自のPython環境の構築・管理をしたい人，さらにpythonライブラリの開発をしたい人はこちらが便利
