@@ -82,7 +82,7 @@ poetry init
 ## 依存性情報の追加
 
 `pyproject.toml`の`[tool.poetry.dependencies]`のセクションに，必要なライブラリとバージョン情報を追記する。
-エディタで編集してもよいが，以下のコマンドを使うと良い。
+エディタで編集してもよいが，以下のコマンドを使うと`pyproject.toml`への登録とともにインストールもしてくれる。
 ```
 poetry add <library name>
 ```
