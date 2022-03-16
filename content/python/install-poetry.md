@@ -5,6 +5,8 @@ weight: 15
 
 pyenv/poetry を使って Mac/Linux上に python 環境を作る方法です。
 pyenvでpythonをインストールして，必要なパッケージはpoetryで導入します。
+開発したプログラムやライブラリの動作環境を明確にできるので，
+本格的にプログラム開発をしたい人におすすめの方法です。
 
 Macでhomebrewを使う人も，Linuxの人も以下の手順でOKのはずです。
 
@@ -39,8 +41,11 @@ $ python --version
 Python 3.10.2
 ```
 
-## Postryのインストール
-最新情報は[poetry](https://python-poetry.org/docs/)のほうが正確だが，ここにも一応のメモ
+## Poetryのインストール
+
+簡単な概要のみの説明です。
+詳細は[poetry](https://python-poetry.org/docs/)を見てください。
+
 
 ```
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
@@ -58,7 +63,7 @@ $ poetry --version
 
 ### 新規プロジェクト作成
 
-Pythonのライブラリ管理環境(プロジェクト)の名前をつける。
+Pythonのプロジェクト(開発する一まとまりのライブラリやプログラム)の名前をつける。
 
 ```
 poetry new <project name>
@@ -68,7 +73,7 @@ poetry new <project name>
 
 ### すでにあるプロジェクトをpoetryに反映
 
-ある程度の環境構築をすでにしている場合に，その情報をpoetryに反映する方法。
+ある程度の作成したプログラムをpoetryで管理するプロジェクトにする方法
 ```
 cd <project directory>
 poetry init
@@ -77,7 +82,7 @@ poetry init
 ## 依存性情報の追加
 
 `pyproject.toml`の`[tool.poetry.dependencies]`のセクションに，必要なライブラリとバージョン情報を追記する。
-エディタで編集してもよいが，以下のコマンドも使える。
+エディタで編集してもよいが，以下のコマンドを使うと良い。
 ```
 poetry add <library name>
 ```
