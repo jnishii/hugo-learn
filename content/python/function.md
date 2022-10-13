@@ -46,11 +46,27 @@ arg3: 3
 これだけなら、引数の一つをtupleやlistにすれば同じ話になりそうだが、
 呼び出した関数から、さらに他の関数を呼び出して、そこに色々な引数を指定
 したいときには、とても便利に使える。
-ただし、引数名もともに値をわたせた方が便利なので、具体的な例については
-次の「`**kwargs`の利用例」の中で説明する。
+
+
+## 引数を辞書にしてまとめてわたす
+
+ここまでの説明で多分わかるように，関数の引数は実は辞書`dict`にまとめて渡すことができる。
+引数が多いときにはとても便利。
+データ解析等でチューニングパラメータが多いとき等によく使う。
+
+```python
+params = {
+    'val1': 1,
+    'val2': 2, 
+    'val3': 3
+}
+
+test(**params)
+```
+
+
 
 ### `**kwargs`の利用例
-
 
 可変長の引数指定を引数名とともにしたいときには、以下のように`**kwargs`を使う。
 `kwargs`はkeyworded argumentsの意味。他の名前にしても良いが、習慣的にこの名前が大抵使われる。
@@ -116,21 +132,19 @@ plot_function(
     fn=np.sin, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=2
     )
 ```
-![](images/function-plot)
 
-## 引数を辞書にしてまとめてわたす
-
-ここまでの説明で多分わかるように，関数の引数は実は辞書`dict`にまとめて渡すことができる。
-引数が多いときにはとても便利。
-データ解析等でチューニングパラメータが多いとき等によく使う。
+`plot_function()`を呼び出す側は，以下のように引数を辞書にまとめておくこともできる。
 
 ```python
-params = {
-    'val1': 1,
-    'val2': 2, 
-    'val3': 3
+params={
+    "color":"green",
+    "marker":"o", 
+    "linestyle":"dashed", 
+    "linewidth": 2,
+    "markersize": 2
 }
 
-test(**params)
+plot_function(fn=np.sin, **params)
 ```
 
+![](images/function-plot)
