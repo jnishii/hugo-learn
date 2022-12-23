@@ -48,7 +48,7 @@ Python 3.10.2
 
 
 ```
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 poetryはデフォルトでは`$HOME/.poetry/bin`にインストールされる。
