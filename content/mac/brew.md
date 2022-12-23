@@ -8,15 +8,18 @@ weight: 2
 
 ## HomeBrewのインストール方法
 
-1. **MacPortsから移行する時**: MacPortsから移行する場合はMacPortsをアンインストールしておく。方法は[こちら](../macports)。
-2. Xcode のインストール: Xcodeのコマンドラインもインストールしておく。
-3. brewコマンドのインストール
+<!--1. **MacPortsから移行する時**: MacPortsから移行する場合はMacPortsをアンインストールしておく。方法は[こちら](../macports)。-->
+1 Command Line Tools for Xcode のインストール
 	```
-	$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	xcode-select --install
+	```
+2. brewコマンドのインストール
+	```
+	$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	$ brew doctor
 	```
 	`brew doctor`の実行後にエラーが出たら，問題を解決しておく。解決方法は大抵エラーメッセージに書いてある。
-4. `brew cask` 実行時のインストールディレクトリの設定
+3. `brew cask` 実行時のインストールディレクトリの設定
 	- homebrew-cask (後述)でインストールしたアプリはデフォルトでは`~/Application`にインストールされる。以下の1, 2行目はこれを`/Application`に変更する設定.
 	```
 	$ echo "export HOMEBREW_CASK_OPTS=\"--appdir=/Applications\"" >> ~/.bash_profile
@@ -29,6 +32,7 @@ weight: 2
 - lv:  多言語対応のlessみたいなの
 - nkf: 文字コード変換ツール
 - rmtrash: rmしたものを完全に消さないで，ゴミ箱に移動してくれる
+- [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
 - [pandoc](http://sky-y.github.io/site-pandoc-jp/users-guide/): markdownとかlatexとかdocxとかを相互に変換するツール
 - unar: ファイル名が文字化けしない解凍ソフト
 - [ffmpeg](https://www.ffmpeg.org/): ビデオやオーディオファイルをいろいろな形式に変換したりできるソフト
@@ -41,6 +45,7 @@ weight: 2
 
 ```
 $ brew install lv gnupg nkf rmtrash
+$ brew install visual-studio-code
 $ brew install pandoc markdown
 $ brew install unar
 $ brew install ffmpeg
@@ -50,23 +55,14 @@ $ brew install fish
 $ brew install z
 ```
 
-## homebrew-caskを使えるようにする
+## brew caskでさらに追加インストール
 
-dmgパッケージとして配布されているものも，brewでインストール・管理できるものが多い。
-
-<!--
-### 準備
-
-dmgパッケージをbrew化したものはリポジトリ caskroom/cask にある。
-```
-$ brew tap caskroom/cask
-```
--->
+dmg形式として配布されているものには，brewで管理できるようパッケージ化されているものがある。
+そのようなパッケージの管理には`brew cask`を使う。
 
 ### いろいろインストール
 
 - [emacs](http://emacsformacosx.com) (Gnu Emacs)
-- [Atom](https://atom.io/): エディタ([こちら](/editors/atom)にも解説あり)
 - [Sublime Text 3](https://www.sublimetext.com/): エディタ([こちら](/editors/sublime)にも解説あり)
 - [grace](http://plasma-gate.weizmann.ac.il/Grace/): グラフプロッタ
 - [sshfs](https://formulae.brew.sh/formula/sshfs): ssh経由でリモートディレクトリをマウントするコマンド．[macFUSE](https://osxfuse.github.io/)もインストールしておく
@@ -75,7 +71,6 @@ $ brew tap caskroom/cask
 ```
 $ brew cask install xquartz     # R, grace, その他いくつかのアプリで必要
 $ brew cask install emacs
-$ brew cask install atom  			# エディタAtom
 $ brew cask install sublime-text	#	エディタSublime Text 3
 $ brew cask install google-japanese-ime	# google日本語入力
 $ brew cask install qlmarkdown  # .md のQuickLookプレビュー

@@ -5,20 +5,18 @@ weight: 3
 
 ### インストール
 
-M1 Macの場合は、まず以下を行う。
-
+Homebrewをインストールしてなかったら，以下でインストール。
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-ここからは、IntelチップもM1チップも同様。
 ```
 $ brew install mactex --cask
 ```
 パスの設定(`~/.bash_profile` 等で設定し、`source ~/.bash_profile`で反映)
 ```
-$ export PATH=/usr/local/texlive/2021/bin/universal-darwin/:$PATH # M1 chip の場合
-$ export PATH=/usr/local/texlive/2021/bin/x86_64-darwin/:$PATH   # Intel chip の場合
+$ export PATH=/usr/local/texlive/2022/bin/universal-darwin/:$PATH # M1 chip の場合
+$ export PATH=/usr/local/texlive/2022/bin/x86_64-darwin/:$PATH   # Intel chip の場合
 ```
 
 TeXまわりのアップデート
@@ -29,7 +27,6 @@ $ sudo tlmgr paper a4
 
 - M1 Macへのインストール方法は[M1 MacへのTex導入方法【2021年版】
 ](https://moromisenpy.com/m1-mactex2021/)を参照。
-    - AtomのLaTex環境設定の説明もあってgoodです。
 
 ### 設定(Catalina,Mojaveの場合)
 
