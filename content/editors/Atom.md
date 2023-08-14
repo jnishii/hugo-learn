@@ -1,5 +1,6 @@
 ---
 title: Atom
+draft: True
 ---
 
 [Atom](https://atom.io/)エディタの設定
