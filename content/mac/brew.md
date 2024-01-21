@@ -9,16 +9,19 @@ weight: 2
 ## HomeBrewのインストール方法
 
 <!--1. **MacPortsから移行する時**: MacPortsから移行する場合はMacPortsをアンインストールしておく。方法は[こちら](../macports)。-->
-1 Command Line Tools for Xcode のインストール
+
+1. Command Line Tools for Xcode のインストール
 	```
 	xcode-select --install
 	```
+
 2. brewコマンドのインストール
 	```
 	$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	$ brew doctor
 	```
 	`brew doctor`の実行後にエラーが出たら，問題を解決しておく。解決方法は大抵エラーメッセージに書いてある。
+
 3. `brew cask` 実行時のインストールディレクトリの設定
 	- homebrew-cask (後述)でインストールしたアプリはデフォルトでは`~/Application`にインストールされる。以下の1, 2行目はこれを`/Application`に変更する設定.
 	```
@@ -64,21 +67,16 @@ dmg形式として配布されているものには，brewで管理できるよ�
 
 - [emacs](http://emacsformacosx.com) (Gnu Emacs)
 - [Sublime Text 3](https://www.sublimetext.com/): エディタ([こちら](/editors/sublime)にも解説あり)
-- [grace](http://plasma-gate.weizmann.ac.il/Grace/): グラフプロッタ
-- [sshfs](https://formulae.brew.sh/formula/sshfs): ssh経由でリモートディレクトリをマウントするコマンド．[macFUSE](https://osxfuse.github.io/)もインストールしておく
 
 
 ```
-$ brew cask install xquartz     # R, grace, その他いくつかのアプリで必要
-$ brew cask install emacs
-$ brew cask install sublime-text	#	エディタSublime Text 3
-$ brew cask install google-japanese-ime	# google日本語入力
-$ brew cask install qlmarkdown  # .md のQuickLookプレビュー
-$ brew cask install osxfuse
-$ brew install sshfs
-$ brew tap homebrew/x11 # graceのインストールのため
-$ brew install grace
+$ brew install xquartz --cask    # R, grace, その他いくつかのアプリで必要
+$ brew install sublime-text	--cask #	エディタSublime Text 3
+$ brew install google-japanese-ime --cask # google日本語入力
+$ brew install qlmarkdown --cask # .md のQuickLookプレビュー
 ```
+
+
 
 ### Rのインストール<a id="R"></a>
 

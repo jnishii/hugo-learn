@@ -8,19 +8,24 @@ weight: 40
 ## 楽曲解析
 - [能動的音楽鑑賞サービスSongle](https://songle.jp/)
 
-## データベース
-### 楽曲データベース
+## Database/Corppora
+
+### Song data
+
 - [Free Music Archive](http://freemusicarchive.org/)
 - [Weimar jazz database](https://jazzomat.hfm-weimar.de/dbformat/dboverview.html)
 - [Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/)
+- [Music corpora for harmonic analysis](https://github.com/pmcharrison/hcorp)
 
-### 演奏分析データベース
+### Performance data
+
 - [CrestMusePEDB](http://www.crestmuse.jp/pedb/)
 - [演奏 deviation データベース　](https://ist.ksc.kwansei.ac.jp/~katayose/Download/Database/deviation/)
 
-## ソフトウェア
+## Libraries
 
-### ソース
+### General Analysis
+
 - [music21](http://web.mit.edu/music21/)
 	- a toolkit for computer-aided musicology
 - [Rhythm Pattern Audio Feature Extractor](https://github.com/tuwien-musicir/rp_extract)
@@ -32,6 +37,10 @@ weight: 40
 - [MuseGAN](https://github.com/salu133445/musegan)
 	- 音楽自動生成
 - [Instructional notebooks on music information retrieval](https://github.com/stevetjoa/musicinformationretrieval.com)
+
+### Expectation models
+
+- [Representing harmony with the hrep package](https://github.com/pmcharrison/hrep)
 
 ### プログラミング
 - [Cycling 74 Max](http://www.mi7.co.jp/products/cycling74/)
