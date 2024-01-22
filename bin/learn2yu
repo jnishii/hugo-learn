@@ -3,7 +3,7 @@
 SOURCE=${HOME}/Sites/hugo-learn/
 DEST=${HOME}/mnt/web/public_html/notebook
 
-hugo -s ${HOME}/Sites/hugo-learn/ \
+hugo --logLevel debug -s ${SOURCE} \
         -b /~jun/notebook \
         -d ${DEST} 
 #        --cleanDestinationDir

@@ -8,8 +8,6 @@ weight: 2
 
 ## HomeBrewのインストール方法
 
-<!--1. **MacPortsから移行する時**: MacPortsから移行する場合はMacPortsをアンインストールしておく。方法は[こちら](../macports)。-->
-
 1. Command Line Tools for Xcode のインストール
 	```
 	xcode-select --install
@@ -65,7 +63,6 @@ dmg形式として配布されているものには，brewで管理できるよ�
 
 ### いろいろインストール
 
-- [emacs](http://emacsformacosx.com) (Gnu Emacs)
 - [Sublime Text 3](https://www.sublimetext.com/): エディタ([こちら](/editors/sublime)にも解説あり)
 
 

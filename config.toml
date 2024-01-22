@@ -1,15 +1,16 @@
 baseURL = "/"
 languageCode = "ja-JP"
+defaultContentLanguage = "ja"
 
 title = "Jun Nishii"
 theme = "hugo-theme-learn"
 themesdir = "themes"
 metaDataFormat = "yaml"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = "UA-48444845-1"
+googleAnalytics.ID = "UA-48444845-1"
 
 [params]
 #  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
