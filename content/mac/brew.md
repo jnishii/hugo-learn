@@ -14,14 +14,11 @@ weight: 2
 	```
 
 2. brewコマンドのインストール
-	```
-	$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-	$ brew doctor
-	```
-	`brew doctor`の実行後にエラーが出たら，問題を解決しておく。解決方法は大抵エラーメッセージに書いてある。
+	- [Homebrew](https://brew.sh)のページにある方法で`brew`コマンドをインストール
+	- インストール後に	`brew doctor` を実行し，エラーが出たら問題を解決しておく。解決方法は大抵エラーメッセージに書いてある。
 
-3. `brew cask` 実行時のインストールディレクトリの設定
-	- homebrew-cask (後述)でインストールしたアプリはデフォルトでは`~/Application`にインストールされる。以下の1, 2行目はこれを`/Application`に変更する設定.
+3. `brew install --cask` 実行時のインストールディレクトリの設定
+	- brew --cask (後述)でインストールしたアプリはデフォルトでは`~/Application`にインストールされる。以下の1, 2行目はこれを`/Application`に変更する設定.
 	```
 	$ echo "export HOMEBREW_CASK_OPTS=\"--appdir=/Applications\"" >> ~/.bash_profile
 	```

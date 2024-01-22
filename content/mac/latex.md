@@ -5,13 +5,13 @@ weight: 3
 
 ### インストール
 
-Homebrewをインストールしてなかったら，以下でインストール。
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+1. Homebrewをインストールしてなかったら，[Homebrew](https://brew.sh)のページの方法でインストール。
+2. TeXのインストール([情報源](https://texwiki.texjp.org/?TeX%20Live%2FMac))。
 
 ```
-$ brew install mactex --cask
+$ brew install --cask mactex-no-gui
+$ sudo tlmgr update --self --all
+$ sudo tlmgr paper a4
 ```
 パスの設定(`~/.bash_profile` 等で設定し、`source ~/.bash_profile`で反映)
 ```
@@ -25,8 +25,8 @@ $ sudo tlmgr update --self --all
 $ sudo tlmgr paper a4
 ```
 
-- M1 Macへのインストール方法は[M1 MacへのTex導入方法【2021年版】
-](https://moromisenpy.com/m1-mactex2021/)を参照。
+
+### 以下は古い情報
 
 ### 設定(Catalina,Mojaveの場合)
 
@@ -50,7 +50,6 @@ $ sudo mktexlsr
 $ sudo kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron
 ```
 
-### 以下は古い情報
 #### 設定(High Sierraの場合)
 
 [macOS High Sierra + Texlive 2017 + ヒラギノフォント](https://qiita.com/osamu620/items/8a299e44d087542e29a9)を見て以下の設定をした。
