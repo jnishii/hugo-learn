@@ -79,7 +79,7 @@ cd <project directory>
 poetry init
 ```
 
-## 依存性情報の追加
+### 依存性情報の追加
 
 `pyproject.toml`の`[tool.poetry.dependencies]`のセクションに，必要なライブラリとバージョン情報を追記する。
 エディタで編集してもよいが，以下のコマンドを使うと`pyproject.toml`への登録とともにインストールもしてくれる。
@@ -87,19 +87,20 @@ poetry init
 poetry add <library name>
 ```
 
-## インストール
+## いろいろな操作
+### パッケージのインストール
 
 ```
 poetry install
 ```
 
-## アップグレード
+### パッケージのアップグレード
 
 ```
 poetry update (--dry-run) # --dry-runはテストのみ行う
 ```
 
-## Pythonブログラムの実行
+### Pythonプログラムの実行
 
 ```
 poetry run python <python script>
@@ -110,13 +111,13 @@ poetry shell
 python <python script>
 ```
 
-## Poetryで追加したライブラリの削除
+### ライブラリの削除
 
 ```
 poetry remove <package name>
 ```
 
-## Poetryで作成した仮想環境の削除
+### Poetryで作成した仮想環境の削除
 
 ```
 poetry env remove --all
