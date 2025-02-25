@@ -110,6 +110,18 @@ poetry shell
 python <python script>
 ```
 
+## Poetryで追加したライブラリの削除
+
+```
+poetry remove <package name>
+```
+
+## Poetryで作成した仮想環境の削除
+
+```
+poetry env remove --all
+```
+
 ## Poetryのアンインストール
 
 ```

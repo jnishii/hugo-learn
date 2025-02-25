@@ -3,4 +3,4 @@
 HUGO=hugo
 echo "using $HUGO"
 
-${HUGO} server --disableFastRender --verbose $1
+${HUGO} server --logLevel debug --disableFastRender $1

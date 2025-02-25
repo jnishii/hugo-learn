@@ -20,7 +20,6 @@
 
   {{ $scr := .Scratch }}
   {{ $js := site.Data.assets.js }}
-  {{ if not site.IsServer }}
   {{ if site.Config.Services.GoogleAnalytics.ID }}
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new
@@ -37,6 +36,5 @@
     {{ if ($scr.Get "use_cdn") }}
     {{ printf "<script async src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.autotrack.url $js.autotrack.version) $js.autotrack.sri | safeHTML }}
     {{ end }}
-  {{ end }}
   {{ end }}
 
