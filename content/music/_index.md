@@ -6,7 +6,10 @@ weight: 40
 音楽情報科学関連のリンク
 
 ## 楽曲解析
+
 - [能動的音楽鑑賞サービスSongle](https://songle.jp/)
+- [Sonic Visualiser](https://sonicvisualiser.org)
+- [Piano Precision](https://github.com/yucongj/piano-precision)
 
 ## Database/Corppora
 
