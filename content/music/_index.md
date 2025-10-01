@@ -16,11 +16,30 @@ weight: 40
 - [Weimar jazz database](https://jazzomat.hfm-weimar.de/dbformat/dboverview.html)
 - [Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/)
 - [Music corpora for harmonic analysis](https://github.com/pmcharrison/hcorp)
+	- コード進行解析用コーパス
 
 ### Performance data
 
 - [CrestMusePEDB](http://www.crestmuse.jp/pedb/)
 - [演奏 deviation データベース　](https://ist.ksc.kwansei.ac.jp/~katayose/Download/Database/deviation/)
+- [Aligned Scores and Performances (ASAP) dataset](https://github.com/fosfrancesco/asap-dataset)
+	- A dataset of aligned musical scores (both MIDI and MusicXML) and performances (audio and MIDI), all with downbeat, beat, time signature, and key signature annotations.
+	- Maestro dataset v2.0.0に情報追加したもの
+- [(n)ASAP: the (note-)Aligned Scores And Performances dataset](https://github.com/CPJKU/asap-dataset)
+	- ASAP datasetのMIDIデータと楽譜データを一音ごとに対応づけをしたもの
+- [ATEPP: A Dataset of Automatically Transcribed Expressive Piano Performances](https://github.com/tangjjbetsy/ATEPP)
+	- a dataset of expressive piano performances by virtuoso pianists.
+	- [ByteDanceのツール](https://github.com/bytedance/piano_transcription)の修正版(?)を使ってMIDI変換
+- [Vienna 4x22 Piano Corpus -- Match, MusicXML, and PDF files](https://github.com/CPJKU/vienna4x22)
+	- Chopin, op. 38, measures 1-46
+	- Chopin, op. 10, measures 1-22
+	- Schubert, D783, 1st movement, measures 1-33
+	- Mozart, K331, 1st movement, measures 1-36
+
+### コード解析
+
+- [chordwiki](https://ja.chordwiki.org)
+- [Hookthoery](https://www.hooktheory.com)
 
 ## Libraries
 
