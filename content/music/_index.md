@@ -3,8 +3,6 @@ title: 音楽情報科学
 weight: 40
 ---
 
-音楽情報科学関連のリンク
-
 ## 楽曲解析
 
 - [能動的音楽鑑賞サービスSongle](https://songle.jp/)
