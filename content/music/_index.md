@@ -38,11 +38,19 @@ weight: 40
 	- Schubert, D783, 1st movement, measures 1-33
 	- Mozart, K331, 1st movement, measures 1-36
 - [Mazurka Project](https://mazurka.org.uk)
+- [RWC研究用音楽データベース](https://staff.aist.go.jp/m.goto/RWC-MDB/index-j.html)
+- [CHARM Record Catalogues](https://earlyrecordingsconference.wordpress.com/research-resources/#slub)
 
 ### コード解析
 
 - [chordwiki](https://ja.chordwiki.org)
 - [Hookthoery](https://www.hooktheory.com)
+
+### 音源のmidiへの変換
+
+- [Basic Pitch](https://basicpitch.spotify.com)
+	- Spotifyによる，音源をMIDIに変換するツール
+- [Samplab](https://samplab.com)
 
 ## Libraries
 
