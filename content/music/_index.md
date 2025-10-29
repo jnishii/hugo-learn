@@ -18,6 +18,9 @@ weight: 40
 - [Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/)
 - [Music corpora for harmonic analysis](https://github.com/pmcharrison/hcorp)
 	- コード進行解析用コーパス
+- [Bach Choral Harmony](https://archive.ics.uci.edu/dataset/298/bach+choral+harmony)
+	- [bach-chorales.com](https://www.bach-chorales.com)にあるコラールのうち60曲のコード解析データ
+
 
 ### Performance data
 
