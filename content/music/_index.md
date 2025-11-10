@@ -9,7 +9,7 @@ weight: 40
 - [Sonic Visualiser](https://sonicvisualiser.org)
 - [Piano Precision](https://github.com/yucongj/piano-precision)
 
-## Database/Corppora
+## Database/Corpora
 
 ### Song data
 
@@ -25,6 +25,7 @@ weight: 40
 ### Performance data
 
 - [CrestMusePEDB](http://www.crestmuse.jp/pedb/)
+- [PEDB 2nd Edition](https://crestmuse.jp/pedb2/)
 - [演奏 deviation データベース　](https://ist.ksc.kwansei.ac.jp/~katayose/Download/Database/deviation/)
 - [The MAESTRO Dataset](https://magenta.withgoogle.com/datasets/maestro)
 - [Aligned Scores and Performances (ASAP) dataset](https://github.com/fosfrancesco/asap-dataset)
@@ -32,6 +33,9 @@ weight: 40
 	- Maestro dataset v2.0.0に情報追加したもの
 - [(n)ASAP: the (note-)Aligned Scores And Performances dataset](https://github.com/CPJKU/asap-dataset)
 	- ASAP datasetのMIDIデータと楽譜データを一音ごとに対応づけをしたもの
+- [GiantMIDI-Piano](https://github.com/bytedance/GiantMIDI-Piano)
+	- Deep Learningによるピアノ演奏のMIDI化ツール
+	- 2,786人の作曲家の10,855曲の演奏が MIDI 化されていてダウンロードできる
 - [ATEPP: A Dataset of Automatically Transcribed Expressive Piano Performances](https://github.com/tangjjbetsy/ATEPP)
 	- a dataset of expressive piano performances by virtuoso pianists.
 	- ByteDanceのツールの修正版(?)を使ってMIDI変換
