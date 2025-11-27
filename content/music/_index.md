@@ -47,6 +47,10 @@ weight: 40
 - [Mazurka Project](https://mazurka.org.uk)
 - [RWC研究用音楽データベース](https://staff.aist.go.jp/m.goto/RWC-MDB/index-j.html)
 - [CHARM Record Catalogues](https://earlyrecordingsconference.wordpress.com/research-resources/#slub)
+- [PianoVAM Dataset](https://huggingface.co/PianoVAM0)
+	- a comprehensive piano performance dataset that includes synchronized video, audio, MIDI, hand landmarks, fingering labels, and rich metadata. 
+	- 106 solo piano recordings from 10 amateur performers, totaling approximately 21 hours of content.
+	- [Tooskits](https://github.com/yonghyunk1m/PianoVAM-Code): PiaRec (GUI for Data Acquisition) and ASDF (semi-Automated System for Detecting Fingering) 
 
 ### コード解析
 
