@@ -44,6 +44,8 @@ weight: 40
 	- Chopin, op. 10, measures 1-22
 	- Schubert, D783, 1st movement, measures 1-33
 	- Mozart, K331, 1st movement, measures 1-36
+- [Batik-plays-Mozart corpus](https://github.com/huispaty/batik_plays_mozart)
+	-  12 complete Mozart Piano Sonatas (36 distinct movements) performed on a computer-monitored Bösendorfer grand piano by Viennese concert pianist Roland Batik.
 - [Mazurka Project](https://mazurka.org.uk)
 - [RWC研究用音楽データベース](https://staff.aist.go.jp/m.goto/RWC-MDB/index-j.html)
 - [CHARM Record Catalogues](https://earlyrecordingsconference.wordpress.com/research-resources/#slub)
